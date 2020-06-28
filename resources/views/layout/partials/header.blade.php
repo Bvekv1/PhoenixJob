@@ -1,4 +1,4 @@
-<header>
+
 <div class="header-area">
             <div id="sticky-header" class="main-header-area">
                 <div class="container-fluid ">
@@ -13,7 +13,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-7">
                                 <div class="main-menu d-none d-lg-block">
-                                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                    <nav>
                                         <ul id="navigation">
                                             <li><a href="index.html">home</a></li>
                                             <li><a href="jobs.html">Browse Job</a></li>
@@ -54,4 +54,3 @@
                 </div>
             </div>
         </div>
-    </header>
