@@ -22,7 +22,9 @@
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
                     <button type="submit" class="btn btn-primary">Login</button>
-                    <button type="submit" class="btn btn-primary">Signup</button>
+                    <button type="submit" class="btn btn-primary bg-light" href="/register">
+                    <a href="/register">Signup</a>
+                    </button>
             </form>
         </div>
     </div>

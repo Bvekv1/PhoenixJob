@@ -49,7 +49,7 @@
                 <div class="form-group">
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Benefits">
                 </div>
-                    <button type="submit" class="btn btn-primary btn-block">Signup</button>
+                    <button type="submit" class="btn btn-primary btn-block">Post Job</button>
             </form>
         </div>
     </div>

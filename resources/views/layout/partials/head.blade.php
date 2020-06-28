@@ -21,6 +21,10 @@
     <link rel="stylesheet" href="{{ asset('css/slicknav.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <!-- css for admin dashboard -->
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+
     <!-- <link rel="stylesheet" href="{{ asset('css/responsive.css') }}"> -->
 
 

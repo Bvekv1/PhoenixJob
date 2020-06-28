@@ -40,8 +40,18 @@
                                     <div class="phone_num d-none d-xl-block">
                                         <a href="/login">Log in</a>
                                     </div>
-                                    <div class="d-none d-lg-block">
-                                        <a class="boxed-btn3" href="#">Post a Job</a>
+                                    <div>
+                                        <ul class="navbar-nav ml-auto ml-md-0">
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle text-light text-uppercase" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Username</a>
+                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                                    <a class="dropdown-item" href="/post_job">Post Job</a>
+                                                    <a class="dropdown-item" href="#">View profile</a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="login.html">Logout</a>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

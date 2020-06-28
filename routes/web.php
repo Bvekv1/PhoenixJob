@@ -25,3 +25,6 @@ Route::get('/register', function () {
 Route::get('/post_job', function () {
     return view('post_job');
 });
+Route::get('/admin_dashboard', function () {
+    return view('admin_dashboard');
+});
