@@ -22,3 +22,6 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
+Route::get('/post_job', function () {
+    return view('post_job');
+});
