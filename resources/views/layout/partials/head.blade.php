@@ -25,9 +25,11 @@
 
 
 <style>
+  
         .login-form {
-            width: 340px;
-            margin: 50px auto;
+            height: auto;
+            
+            width: 440px;
             font-size: 15px;
         }
         .login-form form {
