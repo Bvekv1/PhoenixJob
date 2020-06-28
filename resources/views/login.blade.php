@@ -2,7 +2,7 @@
 @section('content')
 <section class="form-section">
     <div class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-md-3">
+        <div class="col-12 col-sm-6 col-md-6">
             <form class="form-container">
                 <div class="form-group">
                 <h1 for="exampleInputEmail1" >Login</h1>
@@ -21,8 +21,8 @@
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
-                    <button type="submit" class="btn btn-primary btn-block">Login</button>
-                    <button type="submit" class="btn btn-primary btn-block">Signup</button>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary">Signup</button>
             </form>
         </div>
     </div>

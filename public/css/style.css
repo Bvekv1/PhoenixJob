@@ -7476,8 +7476,8 @@ h6 {
 
 .form-section{
   background-color: #020c26;
-  padding-top: 100px;
-  height: 700px;
+  padding: 100px;
+  height: auto;
 }
 
 .form-section .form-container{
