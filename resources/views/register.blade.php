@@ -27,10 +27,10 @@
                         <option>Company</option>
                     </select>
                 </div>
-                <div class="form-group d-none">
+                <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Company Name">
                 </div>
-                <div class="form-group d-none">
+                <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Organization Type">
                 </div>
                 <div class="form-group">
@@ -45,10 +45,10 @@
                 <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phonenumber">
                 </div>
-                <div class="form-group d-none">
+                <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Website">
                 </div>
-                <div class="form-group d-none">
+                <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Company Description">
                 </div>
                     <button type="submit" class="btn btn-primary btn-block">Signup</button>
