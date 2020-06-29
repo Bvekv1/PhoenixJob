@@ -30,3 +30,5 @@ Route::post('/post_job', 'JobController@job_post')->name('job_post');
 Route::get('/admin_dashboard', function () {
     return view('admin_dashboard');
 });
+
+

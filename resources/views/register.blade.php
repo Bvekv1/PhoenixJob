@@ -38,6 +38,7 @@
                 </div>
                 <div class="form-group">
                     <input type="text" name="organizationType" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Organization Type">
+
                 </div>
                 <div class="form-group">
                     <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Address">
