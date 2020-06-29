@@ -8,48 +8,66 @@ use Illuminate\Support\Facades\Http;
 class RegistrationController extends Controller
 {
     public function register_page(){
-        return view('register');
+        if (session()->has('usertoken')){
+            return redirect('/');
+        }
+        else{
+            return view('register');
+        }
+
     }
 
     public function register(request $request){
         $this->validate($request,[
-            'name' => 'required',
-            'firstname' => 'required',
-            'lastname' => 'required',
+            'firstName' => 'required',
+            'lastName' => 'required',
+            'email' => 'required',
             'password' => 'required',
-            'confirmpassword' => 'required'
+            'companyName' => 'required',
+            'organizationType' => 'required',
+            'address' => 'required',
+            'country' => 'required',
+            'city' => 'required',
+            'phone' => 'required',
+            'website' => 'required',
+            'description' => 'required'
         ]);
-        $username = $request->input('name');
-        $firstname = $request->input('firstname');
-        $lastname = $request->input('lastname');
+        $email = $request->input('email');
+        $firstName = $request->input('firstName');
+        $lastName = $request->input('lastName');
         $password = $request->input('password');
-        $userType = $request->input('userType');
+        $userType = 1;
+        $companyName = $request->input('companyName');
+        $organizationType = $request->input('organizationType');
+        $address = $request->input('address');
+        $country = $request->input('country');
+        $city = $request->input('city');
+        $phone = $request->input('phone');
+        $website = $request->input('website');
+        $description = $request->input('description');
 
-        $response = Http::post('http://localhost:3001/api/v1/users', [
-            'username' => $username,
-            'firstname' => $firstname,
-            'lastname' => $lastname,
+        $response = Http::post('http://localhost:4000/registerEmployee', [
+            'firstName' => $firstName,
+            'lastName' => $lastName,
+            'email' => $email,
             'password' => $password,
-            'userType' => $userType
+            'userType' => $userType,
+            'companyName' => $companyName,
+            'organizationType' => $organizationType,
+            'address' => $address,
+            'country' => $country,
+            'city' => $city,
+            'phone' => $phone,
+            'website' => $website,
+            'companyDescription' => $description,
         ]);
 //        dd($response->body());
         $data = json_decode($response->body());
-//        dd($data->message);
-        if ($data->status == 200 && $data->message === 'Successfully registered'){
-            session(['usertoken'=> $data->usertoken]);
-            $userCheck = Http::withHeaders([
-                'Authorization' => 'Bearer '.$data->usertoken
-            ])->get('http://localhost:3001/api/v1/users/token_verification');
-            $userDetail = json_decode($userCheck->body());
-//            dd($userDetail->firstname,$userDetail->lastname);
-            if ($userDetail->userType == 1){
-                return redirect('/');
-            }
-            else if ($userDetail->userType ==2){
-                return redirect('/retailer');
-            }
+//        dd($data);
+        if ($data->status == 200 && $data->message === 'Company registered sucessfully'){
+           return redirect()->route('login');
         }
-        elseif ($data->status == 409 && $data->message === 'user was already registered'){
+        elseif ($data->status == 409 && $data->message === 'Account already exist with this detail'){
             return redirect()->back()->withErrors(['name'=>'user was already registered'])->withInput($request->only('name'));
         }
         else{
