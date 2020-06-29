@@ -21,7 +21,7 @@ Route::post('/login', 'LoginController@login')->name('login');
 
 //for registration *******************************************************************
 Route::get('/register', 'RegistrationController@register_page')->name('registration_page');
-Route::post('/register', 'RegistrationController@regiser')->name('register');
+Route::post('/register', 'RegistrationController@register')->name('register');
 
 //for job post ***********************************************************************
 Route::post('/post_job', 'JobController@job_post')->name('job_post');
