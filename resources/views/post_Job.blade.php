@@ -1,4 +1,4 @@
-@extends('layout.mainlayout')
+@extends('layout.admin_layout')
 @section('content')
 <section class="form-section">
     <div class="row justify-content-center">
