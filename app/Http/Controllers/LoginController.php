@@ -8,7 +8,12 @@ use Illuminate\Support\Facades\Http;
 class LoginController extends Controller
 {
     public function login_page(){
-        return view('login');
+        if (session()->has('usertoken')){
+            return redirect('/');
+        }
+        else{
+            return view('login');
+        }
     }
 
         public function login(request $request){
@@ -38,16 +43,9 @@ class LoginController extends Controller
                 }
                 return redirect()->back()->withErrors($errors)->withInput($request->only('email'));
             }
-            elseif ($responseData->message === 'Register First'){
-                $errors = ['email' => trans('auth.failed'),'password' => trans('auth.failed')];
-                if ($request->expectsJson()) {
-                    return response()->json($errors, 422);
-                }
-                return redirect()->back()->withErrors($errors)->withInput($request->only('email'));
-            }
             elseif ($responseData->status == 200 && $responseData->token !== '') {
                 session(['usertoken' => $responseData->token]);
-                return redirect('job_post');
+                return redirect('/post_job');
             }
             else{
                 $errors = ['email' => trans('auth.failed'),'password' => trans('auth.failed')];

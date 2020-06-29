@@ -24,6 +24,7 @@ Route::get('/register', 'RegistrationController@register_page')->name('registrat
 Route::post('/register', 'RegistrationController@register')->name('register');
 
 //for job post ***********************************************************************
+Route::get('/post_job', 'JobController@job_post_form')->name('job_post_form');
 Route::post('/post_job', 'JobController@job_post')->name('job_post');
 
 Route::get('/admin_dashboard', function () {
