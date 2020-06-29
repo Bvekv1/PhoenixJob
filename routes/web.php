@@ -28,3 +28,5 @@ Route::get('/post_job', function () {
 Route::get('/admin_dashboard', function () {
     return view('admin_dashboard');
 });
+
+
