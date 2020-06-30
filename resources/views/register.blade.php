@@ -34,24 +34,11 @@
                     </select>
                 </div>
                 <div class="form-group">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Company Name">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Organization Type">
-=======
-=======
->>>>>>> 8894fada656186547fe8d25c49fa717961ec3ff7
                     <input type="text" name="companyName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Company Name">
                 </div>
                 <div class="form-group">
                     <input type="text" name="organizationType" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Organization Type">
-<<<<<<< HEAD
->>>>>>> bikesh_apiconnection
-=======
 
->>>>>>> 8894fada656186547fe8d25c49fa717961ec3ff7
                 </div>
                 <div class="form-group">
                     <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Address">
@@ -66,23 +53,11 @@
                     <input type="text" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phonenumber">
                 </div>
                 <div class="form-group">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Website">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Company Description">
-=======
-=======
->>>>>>> 8894fada656186547fe8d25c49fa717961ec3ff7
                     <input type="text" name="website" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Website">
                 </div>
                 <div class="form-group">
                     <input type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Company Description">
-<<<<<<< HEAD
->>>>>>> bikesh_apiconnection
-=======
->>>>>>> 8894fada656186547fe8d25c49fa717961ec3ff7
+
                 </div>
                     <button type="submit" class="btn btn-primary btn-block">Signup</button>
             </form>
