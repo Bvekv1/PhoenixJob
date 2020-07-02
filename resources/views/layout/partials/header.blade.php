@@ -5,9 +5,9 @@
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-lg-2">
-                                <div class="logo">
-                                    <a href="index.html">
-                                        <img src="img/logo.png" alt="">
+                                <div class="navbar navbar-expand-lg navbar-light">
+                                    <a style="color: white;" class="navbar-brand" href="{{ route('home') }}">
+                                        Job Portal
                                     </a>
                                 </div>
                             </div>
@@ -15,7 +15,7 @@
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="/home">home</a></li>
+                                            <li><a href="{{route('home')}}">home</a></li>
                                             <li><a href="jobs.html">Browse Job</a></li>
                                             <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
