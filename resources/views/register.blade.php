@@ -3,61 +3,52 @@
 <section class="form-section">
     <div class="row justify-content-center">
         <div class="col-12 col-sm-6 col-md-6">
-            <form class="form-container" action="{{ route('register') }}" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
+            <form class="form-container">
                 <div class="form-group">
                     <h1 for="exampleInputEmail1" >Register</h1>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input type="text" class="form-control" placeholder="Enter First Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="lastName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Last Name">
+                    <input type="text" class="form-control" placeholder="Enter Last Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+                    <input type="email" class="form-control" placeholder="Enter Email" required>
                 </div>
-                @error('name')
-                <span class="alert-danger">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                @enderror
                 <div class="form-group">
-                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Password" required>
                 </div>
                 <div class="form-group d-none" >
                     <label for="exampleFormControlSelect1">User Type</label>
                     <select class="form-control" id="exampleFormControlSelect1">
                         <option>User</option>
-                        <option>Admin</option>
                         <option>Company</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="companyName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Company Name">
+                    <input type="text" class="form-control" placeholder="Enter Company Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="organizationType" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Organization Type">
-
+                    <input type="text" class="form-control" placeholder="Enter Organization Type" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="address" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Address">
+                    <input type="text" class="form-control" placeholder="Enter Your Address" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="country" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Country">
+                    <input type="text" class="form-control" placeholder="Enter Your Country" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="city" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your City">
+                    <input type="text" class="form-control" placeholder="Enter Your City" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phonenumber">
+                    <input type="text" class="form-control" placeholder="Enter Phonenumber" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="website" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Website">
+                    <input type="text" class="form-control" placeholder="Enter Website" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Company Description">
-
+                    <input type="text" class="form-control" placeholder="Enter Company Description" required>
                 </div>
                     <button type="submit" class="btn btn-primary btn-block">Signup</button>
             </form>
