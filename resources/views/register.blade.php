@@ -8,16 +8,16 @@
                     <h1 for="exampleInputEmail1" >Register</h1>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter First Name">
+                    <input type="text" class="form-control" placeholder="Enter First Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Last Name">
+                    <input type="text" class="form-control" placeholder="Enter Last Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+                    <input type="email" class="form-control" placeholder="Enter Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Password" required>
                 </div>
                 <div class="form-group d-none" >
                     <label for="exampleFormControlSelect1">User Type</label>
@@ -27,28 +27,28 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Company Name">
+                    <input type="text" class="form-control" placeholder="Enter Company Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Organization Type">
+                    <input type="text" class="form-control" placeholder="Enter Organization Type" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Address">
+                    <input type="text" class="form-control" placeholder="Enter Your Address" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Country">
+                    <input type="text" class="form-control" placeholder="Enter Your Country" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your City">
+                    <input type="text" class="form-control" placeholder="Enter Your City" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phonenumber">
+                    <input type="text" class="form-control" placeholder="Enter Phonenumber" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Website">
+                    <input type="text" class="form-control" placeholder="Enter Website" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Company Description">
+                    <input type="text" class="form-control" placeholder="Enter Company Description" required>
                 </div>
                     <button type="submit" class="btn btn-primary btn-block">Signup</button>
             </form>
