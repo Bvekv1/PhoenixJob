@@ -13,18 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/register', function () {
-    return view('register');
-});
-Route::get('/post_job', function () {
-    return view('post_job');
-});
+Route::get('/', 'HomeController@home')->name('home');
+
+//for login **************************************************************************
+Route::get('/login', 'LoginController@login_page')->name('login_page');
+Route::post('/login', 'LoginController@login')->name('login');
+
+//for registration *******************************************************************
+Route::get('/register', 'RegistrationController@register_page')->name('registration_page');
+Route::post('/register', 'RegistrationController@register')->name('register');
+
+//for job post ***********************************************************************
+Route::get('/post_job', 'JobController@job_post_form')->name('job_post_form');
+Route::post('/post_job', 'JobController@job_post')->name('job_post');
+
 Route::get('/admin_dashboard', function () {
     return view('admin_dashboard');
 });
