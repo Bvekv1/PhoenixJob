@@ -28,7 +28,7 @@
     <!-- <link rel="stylesheet" href="{{ asset('css/responsive.css') }}"> -->
 
 
-<style>
+<!-- <style>
   
         .login-form {
             height: auto;
@@ -53,4 +53,4 @@
             font-size: 15px;
             font-weight: bold;
         }
-</style>
+</style> -->

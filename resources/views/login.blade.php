@@ -30,10 +30,10 @@
                 </div>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <label class="form-check-label mb-2" for="exampleCheck1">Check me out</label>
                 </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                    <button type="submit" class="btn btn-primary bg-light">
+                    <button type="submit" class="boxed-btn3">Login</button>
+                    <button type="submit" class="boxed-btn3">
                     <a href="/register">Signup</a>
                     </button>
             </form>
