@@ -31,4 +31,11 @@ Route::get('/admin_dashboard', function () {
     return view('admin_dashboard');
 });
 
+//for job search result **********************************************************************
+Route::get('/job_search')->name('search_job');
+Route::post('/job_search')->name('search_job');
+
+Route::get('/job_search', function () {
+    return view('search_job');
+});
 
