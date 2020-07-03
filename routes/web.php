@@ -39,3 +39,7 @@ Route::get('/job_search', function () {
     return view('search_job');
 });
 
+Route::get('/job_detail', function () {
+    return view('jobdetail');
+});
+
