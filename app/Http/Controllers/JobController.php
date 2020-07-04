@@ -76,4 +76,24 @@ class JobController extends Controller
             return redirect()->back()->withErrors(['message'=>'job posted successfully']);
         }
     }
+
+    public function search_result(request $request){
+        $this->validate($request,[
+                'search' => 'required'
+        ]);
+
+        $search = $request->input('search');
+//        dd($search);
+
+        $response = Http::get('http://localhost:4000/searchJobByTitle/'.$search);
+
+        $data = json_decode($response);
+//        dd($data);
+        if ($data !== []){
+            return view('job_search',['result'=>$data]);
+        }
+        else {
+            return view('job_search');
+        }
+    }
 }

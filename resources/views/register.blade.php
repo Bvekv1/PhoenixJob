@@ -62,7 +62,7 @@
                         <option>Bhaktapur</option>
                         <option>Pokhara</option>
                         <option>Jhapa</option>
-                        <option>Kailali</option>                        
+                        <option>Kailali</option>
                     </select>
                 </div>
                 <div class="form-group">
