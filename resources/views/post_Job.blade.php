@@ -14,48 +14,57 @@
                     <h1 for="exampleInputEmail1" >Post Job</h1>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="job_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job Title">
+                    <input type="text" name="job_title" class="form-control" placeholder="Enter Job Title">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="experience" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Experiences">
+                    <input type="text" name="experience" class="form-control" placeholder="Enter Experiences">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="level" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter level">
+                    <input type="text" name="level" class="form-control" placeholder="Enter level">
                 </div>
                 <div class="form-group">
                     <input type="text" name="position" class="form-control" id="exampleInputPassword1" placeholder="Position">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="jobType" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job Type">
+                    <input type="text" name="jobType" class="form-control" placeholder="Enter Job Type">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="salary" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Salary">
+                    <input type="text" name="salary" class="form-control" placeholder="Enter Salary">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="education" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Education">
+                    <input type="text" name="education" class="form-control" placeholder="Enter Education">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="location" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Location">
+                    <input type="text" name="location" class="form-control" placeholder="Enter Location">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="applyBefore" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Apply before">
+                    <input type="text" name="applyBefore" class="form-control" placeholder="Apply before">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="jobDescription" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job description">
+                    <label>Enter job description</label>
+                    <textarea type="text" class="form-control"
+                        style="width:400px; height:50px;" required>
+                    </textarea>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="jobQualification" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job Qualification">
+                    <label>Enter qualifications</label>
+                    <textarea type="text" class="form-control"
+                        style="width:400px; height:50px;" required>
+                    </textarea>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="expected" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Expected">
+                    <input type="text" name="expected" class="form-control" placeholder="Enter Expected">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="jobHours" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Job Hour">
+                    <input type="text" name="jobHours" class="form-control" placeholder="Enter Job Hour">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="benefits" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Benefits">
+                    <label>Enter benefits</label>
+                    <textarea type="text" class="form-control"
+                        style="width:400px; height:50px;" required>
+                    </textarea>
                 </div>
-                    <button type="submit" class="btn btn-primary btn-block">Post Job</button>
+                    <button type="submit" class="btn btn-success btn-block">Post Job</button>
             </form>
         </div>
     </div>

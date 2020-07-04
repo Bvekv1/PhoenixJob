@@ -36,18 +36,34 @@
                 <div class="form-group">
                     <input type="text" name="companyName" class="form-control" placeholder="Enter Company Name" required>
                 </div>
-                <div class="form-group">
-                    <input type="text" name="organizationType" class="form-control" placeholder="Enter Organization Type" required>
-
+                <div class="form-group ">
+                    <label for="exampleFormControlSelect1">Enter Organization Type</label>
+                    <select class="form-control mb-3" id="exampleFormControlSelect1">
+                        <option>Private</option>
+                        <option>Public</option>
+                        <option>Government</option>
+                        <option>NGO</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <input type="text" name="address" class="form-control" placeholder="Enter Your Address" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="country" class="form-control" placeholder="Enter Your Country" required>
+                    <label for="exampleFormControlSelect1">Enter your country</label>
+                    <select class="form-control mb-3" id="exampleFormControlSelect1">
+                        <option>Nepal</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="city" class="form-control" placeholder="Enter Your City" required>
+                    <label for="exampleFormControlSelect1">Enter your city</label>
+                    <select class="form-control mb-3" id="exampleFormControlSelect1">
+                        <option>Kathmandu</option>
+                        <option>Lalitpur</option>
+                        <option>Bhaktapur</option>
+                        <option>Pokhara</option>
+                        <option>Jhapa</option>
+                        <option>Kailali</option>                        
+                    </select>
                 </div>
                 <div class="form-group">
                     <input type="text" name="phone" class="form-control" placeholder="Enter Phonenumber" required>
@@ -56,8 +72,10 @@
                     <input type="text" name="website" class="form-control" placeholder="Enter Website" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="description" class="form-control" placeholder="Enter Company Description" required>
-
+                    <label>Enter company description</label>
+                    <textarea type="text" class="form-control"
+                    style="width:400px; height:100px;" required>
+                    </textarea>
                 </div>
                     <button type="submit" class="btn btn-success btn-block">Signup</button>
             </form>
