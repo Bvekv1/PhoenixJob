@@ -36,6 +36,10 @@ Route::get('/job_search')->name('search_job');
 Route::post('/job_search')->name('search_job');
 
 Route::get('/job_search', function () {
-    return view('search_job');
+    return view('job_search');
+});
+
+Route::get('/job_detail', function () {
+    return view('job_detail');
 });
 

@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-lg-3 col-md-12">
                     <div class="job_btn">
-                        <a href="#" class="boxed-btn3">Find Job</a>
+                        <a href="/job_search" class="boxed-btn3">Find Job</a>
                     </div>
                 </div>
             </div>
