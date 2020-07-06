@@ -45,7 +45,17 @@ class LoginController extends Controller
             }
             elseif ($responseData->status == 200 && $responseData->token !== '') {
                 session(['usertoken' => $responseData->token]);
-                return redirect('/post_job');
+                $userCheck = Http::withHeaders([
+                    'Authorization' => 'Bearer ' . $responseData->token
+                ])->get('http://localhost:4000/usercheck');
+                $userDetail = json_decode($userCheck->body());
+//                dd($userDetail);
+                if ($userDetail->userType == 1) {
+                    return redirect('/');
+                }
+                elseif ($userDetail->userType == 0){
+                    return redirect('/post_job');
+                }
             }
             else{
                 $errors = ['email' => trans('auth.failed'),'password' => trans('auth.failed')];

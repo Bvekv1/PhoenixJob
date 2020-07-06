@@ -36,7 +36,7 @@ class RegistrationController extends Controller
         $firstName = $request->input('firstName');
         $lastName = $request->input('lastName');
         $password = $request->input('password');
-        $userType = 1;
+        $userType = $request->input('userType');;
         $companyName = $request->input('companyName');
         $organizationType = $request->input('organizationType');
         $address = $request->input('address');
@@ -45,6 +45,7 @@ class RegistrationController extends Controller
         $phone = $request->input('phone');
         $website = $request->input('website');
         $description = $request->input('description');
+//        dd($country,$userType,$city,$organizationType,$email);
 
         $response = Http::post('http://localhost:4000/registerEmployee', [
             'firstName' => $firstName,
