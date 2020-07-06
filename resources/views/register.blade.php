@@ -19,30 +19,30 @@
                 </div>
                 @error('name')
                 <span class="alert-danger">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                    <strong>{{ $message }}</strong>
+                </span>
                 @enderror
                 <div class="form-group">
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
                 </div>
-                <div class="form-group d-none" >
+                <div class="form-group ">
                     <label for="exampleFormControlSelect1">User Type</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>User</option>
-                        <option>Admin</option>
-                        <option>Company</option>
+                    <select name="userType" class="form-control mb-3" id="exampleFormControlSelect1">
+                        <option value="1">User</option>
+                        <option value="0">Company</option>
                     </select>
                 </div>
+
                 <div class="form-group">
                     <input type="text" name="companyName" class="form-control" placeholder="Enter Company Name" required>
                 </div>
                 <div class="form-group ">
                     <label for="exampleFormControlSelect1">Enter Organization Type</label>
-                    <select class="form-control mb-3" id="exampleFormControlSelect1">
-                        <option>Private</option>
-                        <option>Public</option>
-                        <option>Government</option>
-                        <option>NGO</option>
+                    <select name="organizationType" class="form-control mb-3" id="exampleFormControlSelect1">
+                        <option value="Private">Private</option>
+                        <option value="Public">Public</option>
+                        <option value="Government">Government</option>
+                        <option value="NGO">NGO</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -50,30 +50,30 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Enter your country</label>
-                    <select class="form-control mb-3" id="exampleFormControlSelect1">
-                        <option>Nepal</option>
+                    <select class="form-control mb-3" name="country" id="exampleFormControlSelect1">
+                        <option value="Nepal">Nepal</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Enter your city</label>
-                    <select class="form-control mb-3" id="exampleFormControlSelect1">
-                        <option>Kathmandu</option>
-                        <option>Lalitpur</option>
-                        <option>Bhaktapur</option>
-                        <option>Pokhara</option>
-                        <option>Jhapa</option>
-                        <option>Kailali</option>
+                    <select name="city" class="form-control mb-3" id="exampleFormControlSelect1">
+                        <option value="Kathmandu">Kathmandu</option>
+                        <option value="Lalitpur">Lalitpur</option>
+                        <option value="Bhaktapur">Bhaktapur</option>
+                        <option value="Pokhara">Pokhara</option>
+                        <option value="Jhapa">Jhapa</option>
+                        <option value="Kailali">Kailali</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="phone" class="form-control" placeholder="Enter Phonenumber" required>
+                    <input type="text" name="phone" class="form-control" placeholder="Enter Phone number" required>
                 </div>
                 <div class="form-group">
                     <input type="text" name="website" class="form-control" placeholder="Enter Website" required>
                 </div>
                 <div class="form-group">
                     <label>Enter company description</label>
-                    <textarea type="text" class="form-control"
+                    <textarea name="description" type="text" class="form-control"
                     style="width:400px; height:100px;" required>
                     </textarea>
                 </div>
