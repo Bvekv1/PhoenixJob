@@ -47,13 +47,13 @@
                 </div>
                 <div class="form-group">
                     <label>Enter job description</label>
-                    <textarea type="text" class="form-control"
+                    <textarea name="jobDescription" type="text" class="form-control"
                         style="width:400px; height:50px;" required>
                     </textarea>
                 </div>
                 <div class="form-group">
                     <label>Enter qualifications</label>
-                    <textarea type="text" class="form-control"
+                    <textarea name="jobQualification" type="text" class="form-control"
                         style="width:400px; height:50px;" required>
                     </textarea>
                 </div>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="form-group">
                     <label>Enter benefits</label>
-                    <textarea type="text" class="form-control"
+                    <textarea name="benefits" type="text" class="form-control"
                         style="width:400px; height:50px;" required>
                     </textarea>
                 </div>
