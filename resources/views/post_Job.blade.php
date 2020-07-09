@@ -26,7 +26,12 @@
                     <input type="text" name="position" class="form-control" id="exampleInputPassword1" placeholder="Position">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="jobType" class="form-control" placeholder="Enter Job Type">
+                    <label for="exampleFormControlSelect1">Select Job Type</label>
+                    <select name="jobType" class="form-control mb-3" id="exampleFormControlSelect1">
+                        <option value="Part Time">Part Time</option>
+                        <option value="Full Time">Full Time</option>
+                        <option value="Hour Base">Hour Base</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <input type="text" name="salary" class="form-control" placeholder="Enter Salary">
