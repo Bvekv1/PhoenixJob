@@ -26,7 +26,12 @@
                     <input type="text" name="position" class="form-control" id="exampleInputPassword1" placeholder="Position">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="jobType" class="form-control" placeholder="Enter Job Type">
+                    <label for="exampleFormControlSelect1">Select Job Type</label>
+                    <select name="jobType" class="form-control mb-3" id="exampleFormControlSelect1">
+                        <option value="Part Time">Part Time</option>
+                        <option value="Full Time">Full Time</option>
+                        <option value="Hour Base">Hour Base</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <input type="text" name="salary" class="form-control" placeholder="Enter Salary">
@@ -42,13 +47,13 @@
                 </div>
                 <div class="form-group">
                     <label>Enter job description</label>
-                    <textarea type="text" class="form-control"
+                    <textarea name="jobDescription" type="text" class="form-control"
                         style="width:400px; height:50px;" required>
                     </textarea>
                 </div>
                 <div class="form-group">
                     <label>Enter qualifications</label>
-                    <textarea type="text" class="form-control"
+                    <textarea name="jobQualification" type="text" class="form-control"
                         style="width:400px; height:50px;" required>
                     </textarea>
                 </div>
@@ -60,7 +65,7 @@
                 </div>
                 <div class="form-group">
                     <label>Enter benefits</label>
-                    <textarea type="text" class="form-control"
+                    <textarea name="benefits" type="text" class="form-control"
                         style="width:400px; height:50px;" required>
                     </textarea>
                 </div>

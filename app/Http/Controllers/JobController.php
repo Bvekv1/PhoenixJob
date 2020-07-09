@@ -78,22 +78,27 @@ class JobController extends Controller
     }
 
     public function search_result(request $request){
-        $this->validate($request,[
-                'search' => 'required'
-        ]);
-
         $search = $request->input('search');
-//        dd($search);
+        $searchByCategory = $request->input('category');
+//        dd($searchByCategory);
 
-        $response = Http::get('http://localhost:4000/searchJobByTitle/'.$search);
+        if ($searchByCategory === 'Category'){
+            $this->validate($request,[
+                'search' => 'required'
+            ]);
+            $response = Http::get('http://localhost:4000/searchJobByTitle/'.$search);
 
-        $data = json_decode($response);
+            $data = json_decode($response);
 //        dd($data);
-        if ($data !== []){
-            return view('job_search',['result'=>$data]);
+            if ($data !== []){
+                return view('job_search',['result'=>$data]);
+            }
+            else {
+                return view('job_search');
+            }
         }
-        else {
-            return view('job_search');
+        else{
+            dd("waiting for api");
         }
     }
 }

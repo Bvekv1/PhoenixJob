@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <!--/ bradcam_area  -->
+    <!--/ breadcrumb_area  -->
 
     <div class="job_details_area">
         <div class="container">
@@ -135,7 +135,7 @@
                             <li><a href="#"> <i class="fa fa-envelope"></i></a> </li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
