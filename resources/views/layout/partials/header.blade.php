@@ -37,7 +37,7 @@
                             <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                                 <div class="Appointment">
                                     <div class="phone_num d-none d-xl-block">
-                                        <button class="boxed-btn3"><a href="/login">Log in</a></button>
+                                    <a href="/login"><button class="boxed-btn3">Log in</button></a>
                                     </div>
                                     <div class="d-none">
                                         <ul class="navbar-nav ml-auto ml-md-0">
