@@ -29,35 +29,25 @@
             <form action="{{ route('search_job') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                  <div class="row cat_search">
-                    <div class="mb-3">
+                    <div class="col-lg-12">
                         <h1>Search your Job</h1>
                     </div>
-                    <div class="col-lg-9 col-md-4">
+                    <div class="col-lg-6 col-md-4">
                         <div class="single_input">
                             <input name="search" type="text" placeholder="Search keyword">
                         </div>
                     </div>
-                    <!-- <div class="col-lg-3 col-md-4">
+                     <div class="col-lg-3 col-md-4">
                         <div class="single_input">
-                            <select class="wide" >
-                                <option data-display="Location">Location</option>
-                                <option value="1">Dhaka</option>
-                                <option value="2">Rangpur</option>
-                                <option value="4">Sylet</option>
+                            <select name="category" class="wide" >
+                                <option data-display="Category">Category</option>
+                                <option value="Part Time">Part Time</option>
+                                <option value="Full Time">Full Time</option>
+                                <option value="Hour Base">Hour Base</option>
                               </select>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4">
-                        <div class="single_input">
-                            <select class="wide">
-                                <option data-display="Category">Category</option>
-                                <option value="1">Category 1</option>
-                                <option value="2">Category 2</option>
-                                <option value="4">Category 3</option>
-                              </select>
-                        </div>
-                    </div> -->
-                    <div class="col-lg-3 col-md-12">
                             <button type="submit" class="job_btn boxed-btn3">Find Job</button>
                     </div>
 
