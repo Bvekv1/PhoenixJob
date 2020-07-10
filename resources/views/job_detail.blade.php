@@ -5,9 +5,11 @@
 <div class="bradcam_area bradcam_bg_1">
         <div class="container">
             <div class="row">
+            @if(isset($jobdetail))
+                @foreach($jobdetail as $jobdetail)
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>Software Engineer</h3>
+                        <h3>{{$jobdetail->jobTitle}}</h3>
                     </div>
                 </div>
             </div>
@@ -23,13 +25,13 @@
                         <div class="single_jobs white-bg d-flex justify-content-between">
                             <div class="jobs_left d-flex align-items-center">
                                 <div class="jobs_conetent">
-                                    <a href="#"><h4>Software Engineer</h4></a>
+                                    <a href="#"><h4>{{$jobdetail->jobTitle}}</h4></a>
                                     <div class="links_locat d-flex align-items-center">
                                         <div class="location">
-                                            <p> <i class="fa fa-map-marker"></i> Dillibajar, Kathmandu</p>
+                                            <p> <i class="fa fa-map-marker"></i> {{$jobdetail->Location}}</p>
                                         </div>
                                         <div class="location">
-                                            <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                            <p> <i class="fa fa-clock-o"></i> {{$jobdetail->jobType}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -44,22 +46,18 @@
                     <div class="descript_wrap white-bg">
                         <div class="single_wrap">
                             <h4>Job description</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
-                            <p>Variations of passages of lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                            <p>{{$jobdetail->jobDescription}}</p>
                         </div>
                         <div class="single_wrap">
                             <h4>Qualifications</h4>
                             <ul>
-                                <li>The applicants should have experience in the following areas.
+                                <li>{{$jobdetail->jobQualification}}
                                 </li>
-                                <li>Have sound knowledge of commercial activities.</li>
-                                <li>Leadership, analytical, and problem-solving abilities.</li>
-                                <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
                             </ul>
                         </div>
                         <div class="single_wrap">
                             <h4>Benefits</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                            <p>{{$jobdetail->benefits}}</p>
                         </div>
                     </div>
                     <div class="apply_job_form white-bg">
@@ -114,15 +112,15 @@
                         </div>
                         <div class="job_content">
                             <ul>
-                                <li>Experience: <span>1-2 years</span></li>
-                                <li>Level: <span>Intermediate</span></li>
-                                <li>Total Positions: <span>1</span></li>
-                                <li>Job Type: <span> part-time</span></li>
-                                <li>Salary: <span> Rs.15000- Rs.25000</span></li>
-                                <li>Education: <span> Bachelor Degree</span></li>
-                                <li>Location: <span> Dillibajar, Ktm</span></li>
-                                <li>Job Hours: <span> 8 hours</span></li>
-                                <li>Apply Before: <span> 2020-07-30</span></li>
+                                <li>Experience: <span>{{$jobdetail->experience}}</span></li>
+                                <li>Level: <span>{{$jobdetail->level}}</span></li>
+                                <li>Total Positions: <span>{{$jobdetail->positions}}</span></li>
+                                <li>Job Type: <span> {{$jobdetail->jobType}}</span></li>
+                                <li>Salary: <span> {{$jobdetail->salary}}</span></li>
+                                <li>Education: <span> {{$jobdetail->education}}</span></li>
+                                <li>Location: <span> {{$jobdetail->Location}}</span></li>
+                                <li>Job Hours: <span> {{$jobdetail->jobHours}}</span></li>
+                                <li>Apply Before: <span> {{$jobdetail->applyBefore}}</span></li>
                             </ul>
                         </div>
                     </div>
@@ -135,7 +133,8 @@
                             <li><a href="#"> <i class="fa fa-envelope"></i></a> </li>
                         </ul>
                     </div>
-
+                    @endforeach
+                    @endif
                 </div>
             </div>
         </div>
