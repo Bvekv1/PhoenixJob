@@ -177,7 +177,7 @@
                                     <div class="jobs_right">
                                         <div class="apply_now">
                                             <a class="heart_mark" href="#"> <i class="ti-heart"></i> </a>
-                                            <a href="/job_detail/{{$jobsList->jobId}}" name="apply" class="boxed-btn3">Apply Now</a>
+                                            <a href="/job_detail/{{$jobsList->jobId}}" class="boxed-btn3">Apply Now</a>
                                         </div>
                                         <div class="date">
                                             <p>Apply before: {{$jobsList->applyBefore}}</p>
