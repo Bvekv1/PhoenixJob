@@ -35,7 +35,5 @@ Route::get('/admin_dashboard', function () {
 Route::post('/job_search','JobController@search_result')->name('search_job');
 
 
-Route::get('/job_detail', function () {
-    return view('job_detail');
-});
+Route::get('/job_detail/{jobId}','JobController@job_detail');
 

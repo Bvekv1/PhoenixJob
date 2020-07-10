@@ -101,4 +101,11 @@ class JobController extends Controller
             dd("waiting for api");
         }
     }
+
+    public function job_detail(request $request, $jobId){
+        
+        $response = Http::get('http://localhost:4000/jobDetails/'. $jobId);
+        $data = json_decode($response->body());
+        return view('job_detail',['jobdetail'=>$data]);
+    }
 }
