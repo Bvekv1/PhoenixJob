@@ -114,17 +114,14 @@ class JobController extends Controller
 
         $response = Http::get('http://localhost:4000/jobDetails/'. $jobId);
         $data = json_decode($response->body());
-<<<<<<< HEAD
 //        dd($data);
         return view('job_detail',['jobdetail'=>$data]);
-=======
 
         if ($data !== []){
             return view('job_detail',['jobdetail'=>$data]);
         } else {
             return redirect()->back()->withErrors(['message'=>'No data']);
         }
->>>>>>> a4d8da4d42fb7acc6e77e82dd20acf944c95c68b
     }
 
 
