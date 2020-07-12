@@ -103,9 +103,10 @@ class JobController extends Controller
     }
 
     public function job_detail(request $request, $jobId){
-        
+
         $response = Http::get('http://localhost:4000/jobDetails/'. $jobId);
         $data = json_decode($response->body());
+//        dd($data);
         return view('job_detail',['jobdetail'=>$data]);
     }
 }
