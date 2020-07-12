@@ -99,9 +99,10 @@ class JobController extends Controller
         }
         else{
             $response = Http::get('http://localhost:4000/searchJob/'.$searchByCategory);
-            $data = json_decode($response);
+            $data = json_decode($response->body());
             // dd($data);
-            if ($data !== []){
+            if ($data !== null){
+                dd($data);
                 return view('job_search',['result'=>$data]);
             }
             else {
