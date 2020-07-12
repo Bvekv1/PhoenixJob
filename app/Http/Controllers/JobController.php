@@ -98,7 +98,15 @@ class JobController extends Controller
             }
         }
         else{
-            dd("waiting for api");
+            $response = Http::get('http://localhost:4000/searchJob/'.$searchByCategory);
+            $data = json_decode($response);
+            // dd($data);
+            if ($data !== []){
+                return view('job_search',['result'=>$data]);
+            }
+            else {
+                return view('job_search');
+            }
         }
     }
 
@@ -106,6 +114,13 @@ class JobController extends Controller
         
         $response = Http::get('http://localhost:4000/jobDetails/'. $jobId);
         $data = json_decode($response->body());
-        return view('job_detail',['jobdetail'=>$data]);
+
+        if ($data !== []){
+            return view('job_detail',['jobdetail'=>$data]);
+        } else {
+            return redirect()->back()->withErrors(['message'=>'No data']);
+        }
     }
+
+
 }
