@@ -135,16 +135,22 @@
                                       style="width:400px; height:50px;" required>
                     </textarea>
                         </div>
-                        <div class="form-group">
-                            <input type="text" name="expected" class="form-control" placeholder="Enter Expected">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="jobHours" class="form-control" placeholder="Enter Job Hour">
-                        </div>
-                        <div class="form-group">
-                            <label>Enter benefits</label>
-                            <textarea name="benefits" type="text" class="form-control"
-                                      style="width:400px; height:50px;" required>
+                <div class="form-group">
+                    <input type="text" name="expected" class="form-control" placeholder="Enter Expected">
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-10">
+                        <input type="number" name="jobHours" class="form-control" placeholder="Enter Job Hour" min="1">
+                    </div>
+                    <div class="col-md-2">
+                        <p>Hours</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Enter benefits</label>
+                    <textarea name="benefits" type="text" class="form-control"
+                        style="width:400px; height:50px;" required>
+
                     </textarea>
                         </div>
                         <button type="submit" class="btn btn-success btn-block">Post Job</button>
