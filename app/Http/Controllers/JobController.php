@@ -88,7 +88,7 @@ class JobController extends Controller
             ]);
             $response = Http::get('http://localhost:4000/searchJobByTitle/'.$search);
 
-            $data = json_decode($response);
+            $data = json_decode($response-> body());
 //        dd($data);
             if ($data !== []){
                 return view('job_search',['result'=>$data]);
@@ -100,9 +100,9 @@ class JobController extends Controller
         else{
             $response = Http::get('http://localhost:4000/searchJob/'.$searchByCategory);
             $data = json_decode($response->body());
-            // dd($data);
-            if ($data !== null){
-                dd($data);
+//             dd($data);
+            if ($data !== []){
+//                dd($data->jobTitle);
                 return view('job_search',['result'=>$data]);
             }
             else {
@@ -112,10 +112,10 @@ class JobController extends Controller
     }
 
     public function job_detail(request $request, $jobId){
-        
+
         $response = Http::get('http://localhost:4000/jobDetails/'. $jobId);
         $data = json_decode($response->body());
-
+//        dd($data);
         if ($data !== []){
             return view('job_detail',['jobdetail'=>$data]);
         } else {

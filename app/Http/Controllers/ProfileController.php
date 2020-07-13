@@ -5,19 +5,29 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class RegistrationController extends Controller
+class ProfileController extends Controller
 {
-    public function register_page(){
-        if (session()->has('usertoken')){
-            return redirect('/');
+    //
+    public function edit_profile_page($userId){
+        if (Session()-> has('usertoken')){
+            $userToken = session()->get('usertoken');
+            $userCheck = Http::withHeaders([
+                'Authorization' => 'Bearer '.$userToken
+            ])->get('http://localhost:4000/usercheck');
+            $userDetail = json_decode($userCheck->body());
+            // dd($userDetail);
+            $response =  Http::get('http://localhost:4000/userDetail/'. $userDetail->userId);
+            $data = json_decode($response->body());
+            // dd($data);
+            return view('edit_profile', ['detail'=>$data]);
+            
         }
-        else{
-            return view('register');
+        else {
+            return redirect('/login');
         }
-
     }
 
-    public function register(request $request){
+    public function edit_profile(request $request){
         $this->validate($request,[
             'firstName' => 'required',
             'lastName' => 'required',
@@ -45,9 +55,12 @@ class RegistrationController extends Controller
         $phone = $request->input('phone');
         $website = $request->input('website');
         $description = $request->input('description');
-//        dd($country,$userType,$city,$organizationType,$email);
 
-        $response = Http::post('http://localhost:4000/registerEmployee', [
+        $userToken = session()->get('usertoken');
+        // dd($userToken);
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer '.$userToken
+        ])->put('http://localhost:4000/userUpdate/'.$request->input('id'), [
             'firstName' => $firstName,
             'lastName' => $lastName,
             'email' => $email,
@@ -62,21 +75,15 @@ class RegistrationController extends Controller
             'website' => $website,
             'companyDescription' => $description,
         ]);
-//        dd($response->body());
         $data = json_decode($response->body());
-//        dd($data);
-        if ($data->status == 200 && $data->message === 'Company registered sucessfully'){
-           return redirect()->route('login');
-        }
-        elseif ($data->status == 409 && $data->message === 'Account already exist with this detail'){
-            return redirect()->back()->withErrors(['name'=>'user was already registered'])->withInput($request->only('name'));
-        }
-        else{
-            $errors = ['name' => trans('auth.failed'),'password' => trans('auth.failed')];
-            if ($request->expectsJson()) {
-                return response()->json($errors, 422);
-            }
-            return redirect()->back()->withErrors($errors)->withInput($request->only('name'));
-        }
+            //    dd($request->input('userId'));
+                if ($data->status == 200 && $data->message === 'User was successfully Updated'){
+                    return back()->withErrors(['message' => $data->message]);
+                }
+                else {
+                    return back()->withErrors(['error' => 'There was an error updating ']);
+                }
+      
     }
+       
 }
