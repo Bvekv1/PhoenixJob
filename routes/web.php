@@ -31,9 +31,14 @@ Route::get('/admin_dashboard', function () {
     return view('admin_dashboard');
 });
 
-//for job search result **********************************************************************
+//for job search result ***************************************************************
 Route::post('/job_search','JobController@search_result')->name('search_job');
 
-
+//for job detail **********************************************************************
 Route::get('/job_detail/{jobId}','JobController@job_detail');
+
+//for job edit ************************************************************************
+Route::get('/job_edit/{jobId}','JobController@job_edit_page')->name('job_edit_page');
+Route::post('/job_edit','JobController@job_edit')->name('job_edit');
+
 
