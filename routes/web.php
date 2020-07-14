@@ -41,4 +41,8 @@ Route::get('/job_detail/{jobId}','JobController@job_detail');
 Route::get('/job_edit/{jobId}','JobController@job_edit_page')->name('job_edit_page');
 Route::post('/job_edit','JobController@job_edit')->name('job_edit');
 
+//for user profile edit **********************************************************************
+Route::get('/editProfile/{userId}','ProfileController@edit_profile_page')->name('edit_profile_page');
+Route::post('/editProfile','ProfileController@edit_profile')->name('edit_profile');
+
 

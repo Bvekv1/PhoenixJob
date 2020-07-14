@@ -49,7 +49,7 @@ class LoginController extends Controller
                     'Authorization' => 'Bearer ' . $responseData->token
                 ])->get('http://localhost:4000/usercheck');
                 $userDetail = json_decode($userCheck->body());
-//                dd($userDetail);
+            //    dd($userDetail);
                 if ($userDetail->userType == 1) {
                     return redirect('/');
                 }

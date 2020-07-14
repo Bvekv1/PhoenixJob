@@ -15,9 +15,10 @@
       <li class="nav-item">
         <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-light text-uppercase" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Username</a>
+                <a class="nav-link dropdown-toggle text-light text-uppercase" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                >Username</a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">View profile</a>
+                <a class="dropdown-item" href="/editProfile/{userId}">View profile</a>
             <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="login.html">Logout</a>
             </div>
