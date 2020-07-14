@@ -1,7 +1,7 @@
 @extends('layout.admin_layout')
 @section('content')
 @if(isset($detail))
-    @foreach($detail as $details)
+    
     @error('message')
             <script>
                 alert('Profile updated successfull');
@@ -38,9 +38,7 @@
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
-                <div class="form-group">
-                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
-                </div>
+               
                 <div class="form-group " readonly hidden>
                     <label for="exampleFormControlSelect1">User Type</label>
                     <select name="userType" class="form-control mb-3" id="exampleFormControlSelect1">
@@ -94,7 +92,9 @@
                 <div class="form-group">
                     <label>Enter company description</label>
                     <textarea name="description" type="text" class="form-control"
-                    style="width:400px; height:100px;" value="{{$detail->companyDescription}}" required>
+                    style="width:400px; height:100px;" required
+                    >
+{{$detail->companyDescription}}                    
                     </textarea>
                 </div>
                     <button type="submit" class="btn btn-success btn-block">Update</button>
@@ -102,10 +102,10 @@
         </div>
     </div>
 </section>
-@endforeach
-    @endif
 
-        <!-- <section class="form-section">
+    @else
+
+        <section class="form-section">
     <div class="row justify-content-center">
         <div class="col-12 col-sm-6 col-md-6">
             <form class="form-container" action="{{ route('edit_profile') }}" method="post" enctype="multipart/form-data">
@@ -186,6 +186,7 @@
             </form>
         </div>
     </div>
-</section>         -->
+</section> 
+@endif       
 @endsection
-<b></b>
+

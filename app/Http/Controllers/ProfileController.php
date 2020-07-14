@@ -32,7 +32,6 @@ class ProfileController extends Controller
             'firstName' => 'required',
             'lastName' => 'required',
             'email' => 'required',
-            'password' => 'required',
             'companyName' => 'required',
             'organizationType' => 'required',
             'address' => 'required',
@@ -45,7 +44,6 @@ class ProfileController extends Controller
         $email = $request->input('email');
         $firstName = $request->input('firstName');
         $lastName = $request->input('lastName');
-        $password = $request->input('password');
         $userType = $request->input('userType');;
         $companyName = $request->input('companyName');
         $organizationType = $request->input('organizationType');
@@ -64,7 +62,6 @@ class ProfileController extends Controller
             'firstName' => $firstName,
             'lastName' => $lastName,
             'email' => $email,
-            'password' => $password,
             'userType' => $userType,    
             'companyName' => $companyName,
             'organizationType' => $organizationType,
