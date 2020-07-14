@@ -46,7 +46,6 @@
                                                 <li class="nav-item dropdown">
                                                     <a class="nav-link dropdown-toggle text-light text-uppercase" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Username</a>
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                                                        <a class="dropdown-item" href="/post_job">Post Job</a>
                                                         <a class="dropdown-item" href="/editProfile/{userId}">View profile</a>
                                                         <div class="dropdown-divider"></div>
                                                         <a class="dropdown-item" href="login.html">Logout</a>

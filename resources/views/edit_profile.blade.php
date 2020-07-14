@@ -16,7 +16,7 @@
             <form class="form-container" action="{{ route('edit_profile') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <h1 for="exampleInputEmail1" >Edit Company Profile</h1>
+                    <h1 for="exampleInputEmail1" >Edit Profile</h1>
                 </div>
                 <div class="form-group">
                     <input type="text" name="id" value="{{$detail->id}}" class="form-control" placeholder="" readonly hidden>
