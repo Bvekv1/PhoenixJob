@@ -12,13 +12,13 @@ class LoginTest extends TestCase
 
     public function testExample()
     {
-        $response = $this->call('POST', 'login', ['email' => 'sujanmaharjan@gmail.com',
+        $response = $this->call('POST', 'login', ['email' => 'kappa@gmail.com',
                                                     'password' => 'kappa123',
                                     ]);
 
         $this->assertEquals(302, $response->status());
         $this->assertInstanceOf('Illuminate\Testing\TestResponse', $response);
-        $this->assertEquals('http://localhost', $response->getTargetUrl());
+        $this->assertEquals('http://localhost/post_job', $response->getTargetUrl());
 
     }
 }
