@@ -45,4 +45,7 @@ Route::post('/job_edit','JobController@job_edit')->name('job_edit');
 Route::get('/editProfile/{userId}','ProfileController@edit_profile_page')->name('edit_profile_page');
 Route::post('/editProfile','ProfileController@edit_profile')->name('edit_profile');
 
+Route::get('/admin_dashboard', 'AdminController@admin_dashboard_page')->name('admin_dashboard_page');
+
+
 
