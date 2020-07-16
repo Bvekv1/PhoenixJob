@@ -106,8 +106,8 @@
 </div>
 
     @else
-<div class="col p-4">
-        <section class="form-section">
+    <div class="col p-4">
+<section class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-sm-6 col-md-6">
             <form class="form-container" action="{{ route('edit_profile') }}" method="post" enctype="multipart/form-data">
