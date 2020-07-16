@@ -54,7 +54,7 @@ class LoginController extends Controller
                     return redirect('/');
                 }
                 elseif ($userDetail->userType == 0){
-                    return redirect('/post_job');
+                    return redirect('/admin_dashboard');
                 }
             }
             else{

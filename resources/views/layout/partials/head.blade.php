@@ -25,8 +25,7 @@
     <!-- css for admin dashboard -->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
 
-    <!-- <link rel="stylesheet" href="{{ asset('css/responsive.css') }}"> -->
-
+  
 
 <!-- <style>
   

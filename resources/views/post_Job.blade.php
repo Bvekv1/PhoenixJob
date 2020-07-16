@@ -10,7 +10,8 @@
             @error('error')
             <div class="alert-danger"> <p> {{$error->first('error')}}</p></div>
             @enderror
-            <section class="form-section">
+        <div class="col p-4">
+            <section class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-sm-6 col-md-6">
                         <form class="form-container" action="{{route('job_edit')}}" method="post" enctype="multipart/form-data">
@@ -85,6 +86,7 @@
                     </div>
                 </div>
             </section>
+            </div><!-- body-row END -->
         @endforeach
     @else
         @error('message')
@@ -92,7 +94,8 @@
             alert('job successfully posted');
         </script>
         @enderror
-        <section class="form-section">
+        <div class="col p-4">
+            <section class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-sm-6 col-md-6">
                     <form class="form-container" action="{{ route('job_post') }}" method="post" enctype="multipart/form-data">
@@ -167,5 +170,8 @@
                 </div>
             </div>
         </section>
+        </div><!-- body-row END -->
+
     @endif
 @endsection
+
