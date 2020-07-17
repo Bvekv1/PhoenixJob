@@ -53,7 +53,7 @@ class JobController extends Controller
         $userToken = session()->get('usertoken');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer '.$userToken
-        ])->post('http://localhost:4000/postJob', [
+        ])->post('http://localhost:4000/api/v1/job', [
             'jobTitle' => $job_title,
             'experience' => $experience,
             'level' => $level,
@@ -86,7 +86,7 @@ class JobController extends Controller
             $this->validate($request,[
                 'search' => 'required'
             ]);
-            $response = Http::get('http://localhost:4000/searchJobByTitle/'.$search);
+            $response = Http::get('http://localhost:4000/api/v1/job/searchJobByTitle/'.$search);
 
             $data = json_decode($response-> body());
 //        dd($data);
@@ -98,7 +98,7 @@ class JobController extends Controller
             }
         }
         else{
-            $response = Http::get('http://localhost:4000/searchJob/'.$searchByCategory);
+            $response = Http::get('http://localhost:4000/api/v1/job/searchJobByCategory/'.$searchByCategory);
             $data = json_decode($response->body());
 //             dd($data);
             if ($data !== []){
@@ -113,7 +113,7 @@ class JobController extends Controller
 
     public function job_detail(request $request, $jobId){
 
-        $response = Http::get('http://localhost:4000/jobDetails/'. $jobId);
+        $response = Http::get('http://localhost:4000/api/v1/job/'. $jobId);
         $data = json_decode($response->body());
 //        dd($data);
         if ($data !== []){
@@ -125,7 +125,7 @@ class JobController extends Controller
 
     public function job_edit_page($jobId){
 
-        $response = Http::get('http://localhost:4000/jobDetails/'. $jobId);
+        $response = Http::get('http://localhost:4000/api/v1/job/'. $jobId);
         $data = json_decode($response->body());
 //        dd($data);
         if ($data !== []){
@@ -171,7 +171,7 @@ class JobController extends Controller
         $userToken = session()->get('usertoken');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer '.$userToken
-        ])->put('http://localhost:4000/jobinfoUpdate/'.$request->input('jobId'), [
+        ])->put('http://localhost:4000/api/v1/job/'.$request->input('jobId'), [
             'jobTitle' => $job_title,
             'experience' => $experience,
             'level' => $level,
