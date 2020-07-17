@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Http;
 class AdminController extends Controller
 {
     public function admin_dashboard_page(){
-        $response = Http::get('http://localhost:4000/displayAllJob');
+        $response = Http::get('http://localhost:4000/api/v1/job');
 
         $jobs = json_decode($response->body());
 //        dd($jobs);

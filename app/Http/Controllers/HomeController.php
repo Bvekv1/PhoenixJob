@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 class HomeController extends Controller
 {
     public function home(){
-        $response = Http::get('http://localhost:4000/displayAllJob');
+        $response = Http::get('http://localhost:4000/api/v1/job');
 
         $jobs = json_decode($response->body());
 //        dd($jobs);

@@ -47,7 +47,7 @@ class RegistrationController extends Controller
         $description = $request->input('description');
 //        dd($country,$userType,$city,$organizationType,$email);
 
-        $response = Http::post('http://localhost:4000/registerEmployee', [
+        $response = Http::post('http://localhost:4000/api/v1/users', [
             'firstName' => $firstName,
             'lastName' => $lastName,
             'email' => $email,

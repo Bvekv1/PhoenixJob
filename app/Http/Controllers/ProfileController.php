@@ -15,8 +15,8 @@ class ProfileController extends Controller
                 'Authorization' => 'Bearer '.$userToken
             ])->get('http://localhost:4000/usercheck');
             $userDetail = json_decode($userCheck->body());
-            // dd($userDetail);
-            $response =  Http::get('http://localhost:4000/userDetail/'. $userDetail->userId);
+            dd($userDetail);
+            $response =  Http::get('http://localhost:4000/api/v1/users/'. $userDetail->id);
             $data = json_decode($response->body());
             // dd($data);
             return view('edit_profile', ['detail'=>$data]);
@@ -58,7 +58,7 @@ class ProfileController extends Controller
         // dd($userToken);
         $response = Http::withHeaders([
             'Authorization' => 'Bearer '.$userToken
-        ])->put('http://localhost:4000/userUpdate/'.$request->input('id'), [
+        ])->put('http://localhost:4000/api/v1/users/'.$request->input('id'), [
             'firstName' => $firstName,
             'lastName' => $lastName,
             'email' => $email,
