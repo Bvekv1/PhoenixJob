@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-3">
                 <div href="#" class="btn btn-success">Edit</div>
-                <div href="{{route(delete_job)/$jobsList->$jobId}}" class="btn btn-danger">Delete</div>
+                <a href="/deleteJob/{{$jobsList->jobId}}" class="btn btn-danger">Delete</a>
             </div>
             @endforeach
             @endif
