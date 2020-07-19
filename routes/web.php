@@ -54,6 +54,13 @@ Route::get('/admin_dashboard', 'AdminController@admin_dashboard_page')->name('ad
 //for applied job
 Route::get('/applied_job', 'AppliedJobController@job_applied_page')->name('job_applied_page');
 
+//for applied job
 Route::post('/jobApplied', 'AppliedJobController@job_applied')->name('job_applied');
+
+//for get applied job
+Route::get('/getappliedJob', 'AppliedJobController@get_applied_job')->name('get_applied_job');
+
+//for deleting applied job
+Route::get('/deleteappliedJob/{jobId}', 'JobController@delete_applied_job')->name('delete_applied_job');
 
 

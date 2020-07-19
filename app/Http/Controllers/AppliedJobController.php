@@ -33,7 +33,44 @@ class AppliedJobController extends Controller
             return back()->withErrors(['error' => 'job was not applied']);
         }
     }
+
+    public function get_applied_job(request $request){
+        $userToken = session()->get('usertoken');
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer '.$userToken
+        ])->get('http://localhost:4000/api/v1/jobApplied');
+        $data = json_decode($response->body());
+        dd($data);
+
+        if ($data !== []){
+            return view('job_applied',['getjobapplied'=>$data]);
+        } else {
+            return redirect()->back()->withErrors(['message'=>'No data']);
+        }
+    }
+
+    public function delete_applied_job(request $request, $jobId){
+        
+        $userToken = session()->get('usertoken');
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer '.$userToken
+        ])->delete('http://localhost:4000/api/v1/jobApplied/'. $jobId);
+        $data = json_decode($response->body());
+        
+        // dd($data);
+        if ($data->status == 200 && $data->message === 'Job applied was successfully deleted'){
+            return back()->withErrors(['message' => $data->message]);
+        }
+        else {
+            return back()->withErrors(['error' => 'job applied was not deleted']);
+        }
+    }
+
+    
+
+
+    }
    
         
     
-}
+
