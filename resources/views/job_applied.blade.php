@@ -1,40 +1,54 @@
 @extends('layout.mainlayout')
-@section('content') 
+@section('content')
 
-    <div class="form-section">
-        <div class="container m-5">
-        <div class="display-1 text-center text-light m-5">Job Applied</div>
-        <div class="thumbnail card">   
-        @if(isset($getjobapplied))
-                        @foreach($getjobapplied as $getjobsapplied)
-                    <div class="caption card-body">
-                                <h3 class="group card-title inner list-group-item-heading">
-                                    Job title</h3>
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <p class="group inner list-group-item-text"> {{$getjobsapplied->jobTitle}}</p>
-                                    </div>
-                                    <div class="col-md-3">
-                                    
-                                        <a class="btn btn-success boxed-btn text-light" href="">View</a>
-                                    </div>       
-                                </div>
-                                <div class="row">
-                                <div class="col-md-9">
-                                    <p class="group inner list-group-item-text">This is description</p>
-                                </div>
-                                <div class="col-md-3">
-                                    <a class="btn btn-danger boxed-btn text-light" href="/deleteappliedJob/{{$getjobsapplied->jobId}}">Delete</a>
-                                </div>
-                                <p class=" d-block">Location</p>
-                                <p class="group inner list-group-item-text d-block">Job hour</p> 
-                            </div>
-                
+    <div class="job_listing_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="section_title">
+                        <h3>Applide Job Listing</h3>
+                    </div>
+                </div>
             </div>
-            @endforeach
-            @endif
-        </div>
+            <div class="job_lists">
+                <div class="row">
+                    @if(isset($getjobapplied))
+                        @foreach($getjobapplied as $getappliedjobs)
+                            <div class="col-lg-12 col-md-12">
+                                <div class="single_jobs white-bg d-flex justify-content-between">
+                                    <div class="jobs_left d-flex align-items-center">
+                                        <div class="thumb">
+                                            <img src="img/svg_icon/1.svg" alt="">
+                                        </div>
+                                        <div class="jobs_conetent">
+                                            <a href="job_details.html"><h4>{{$getappliedjobs->job->jobTitle}}</h4></a>
+                                            <div class="links_locat d-flex align-items-center">
+                                                <div class="location">
+                                                    <p> <i class="fa fa-map-marker"></i> {{$getappliedjobs->job->Location}}</p>
+                                                </div>
+                                                <div class="location">
+                                                    <p> <i class="fa fa-clock-o"></i> {{$getappliedjobs->job->jobHours}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="jobs_right">
+                                        <div class="apply_now">
+                                            <a class="boxed-btn4" href="#"> View </a>
+                                            <a href="/deleteappliedJob/{{$getappliedjobs->job->jobId}}" class="boxed-btn3">Delete</a>
+                                        </div>
+                                        <div class="date">
+                                            <p>Applied On: {{$getappliedjobs->createdAt}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
         </div>
     </div>
+
 
 @endsection

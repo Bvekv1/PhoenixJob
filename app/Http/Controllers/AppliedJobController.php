@@ -14,7 +14,7 @@ class AppliedJobController extends Controller
         else{
             return redirect('/');
         }
-    } 
+    }
 
     public function job_applied(request $request){
         $jobId=$request->input('jobId');
@@ -24,7 +24,7 @@ class AppliedJobController extends Controller
             'Authorization' => 'Bearer '.$userToken
         ])->post('http://localhost:4000/api/v1/jobApplied/', ['jobId'=>$jobId]);
         $data = json_decode($response->body());
-        dd($data);
+//        dd($data);
 
         if ($data->status == 200 && $data->message === 'Job was applied successfully'){
             return back()->withErrors(['message' => $data->message]);
@@ -40,8 +40,10 @@ class AppliedJobController extends Controller
             'Authorization' => 'Bearer '.$userToken
         ])->get('http://localhost:4000/api/v1/jobApplied');
         $data = json_decode($response->body());
-        dd($data);
-
+//        dd($data);
+//        foreach ($data as $datas){
+//            dd($datas->job->jobTitle);
+//        }
         if ($data !== []){
             return view('job_applied',['getjobapplied'=>$data]);
         } else {
@@ -50,14 +52,14 @@ class AppliedJobController extends Controller
     }
 
     public function delete_applied_job(request $request, $jobId){
-        
+
         $userToken = session()->get('usertoken');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer '.$userToken
         ])->delete('http://localhost:4000/api/v1/jobApplied/'. $jobId);
         $data = json_decode($response->body());
-        
-        // dd($data);
+
+//         dd($data);
         if ($data->status == 200 && $data->message === 'Job applied was successfully deleted'){
             return back()->withErrors(['message' => $data->message]);
         }
@@ -66,11 +68,11 @@ class AppliedJobController extends Controller
         }
     }
 
-    
+
 
 
     }
-   
-        
-    
+
+
+
 

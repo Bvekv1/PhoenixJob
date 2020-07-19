@@ -61,6 +61,6 @@ Route::post('/jobApplied', 'AppliedJobController@job_applied')->name('job_applie
 Route::get('/getappliedJob', 'AppliedJobController@get_applied_job')->name('get_applied_job');
 
 //for deleting applied job
-Route::get('/deleteappliedJob/{jobId}', 'JobController@delete_applied_job')->name('delete_applied_job');
+Route::get('/deleteappliedJob/{jobId}', 'AppliedJobController@delete_applied_job')->name('delete_applied_job');
 
 
