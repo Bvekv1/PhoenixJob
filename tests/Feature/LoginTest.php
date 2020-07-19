@@ -12,8 +12,8 @@ class LoginTest extends TestCase
 
     public function testExample()
     {
-        $response = $this->call('POST', 'login', ['email' => 'kappa@gmail.com',
-                                                    'password' => 'kappa123',
+        $response = $this->call('POST', 'login', ['email' => 'manish@gmail.com',
+                                                    'password' => 'manish',
                                     ]);
 
         $this->assertEquals(302, $response->status());

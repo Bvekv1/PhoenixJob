@@ -19,8 +19,8 @@ class postJobTest extends TestCase
         // $user = json_decode($response);
         
         $login = Http::post('http://localhost:4000/loginUser', [
-            'email' => 'kappa@gmail.com',
-            'password' => 'kappa123'
+            'email' => 'manish@gmail.com',
+            'password' => 'manish'
         ]);
 
         $responseData = json_decode($login->body());

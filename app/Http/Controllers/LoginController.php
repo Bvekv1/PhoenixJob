@@ -26,7 +26,7 @@ class LoginController extends Controller
 
 //            dd($email,$password);
 
-            $response = Http::post('http://localhost:4000/loginUser', [
+            $response = Http::post('http://localhost:4000/api/v1/users/login', [
                 'email' => $email,
                 'password' => $password
             ]);
@@ -47,14 +47,14 @@ class LoginController extends Controller
                 session(['usertoken' => $responseData->token]);
                 $userCheck = Http::withHeaders([
                     'Authorization' => 'Bearer ' . $responseData->token
-                ])->get('http://localhost:4000/usercheck');
+                ])->get('http://localhost:4000/api/v1/users');
                 $userDetail = json_decode($userCheck->body());
-//                dd($userDetail);
+            //    dd($userDetail);
                 if ($userDetail->userType == 1) {
                     return redirect('/');
                 }
                 elseif ($userDetail->userType == 0){
-                    return redirect('/post_job');
+                    return redirect('/admin_dashboard');
                 }
             }
             else{

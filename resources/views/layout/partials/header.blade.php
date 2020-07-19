@@ -6,7 +6,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-lg-2">
                                 <div class="navbar navbar-expand-lg navbar-light">
-                                    <a style="color: white;" class="navbar-brand" href="{{ route('home') }}">
+                                    <a style="color: white;" class="navbar-brand" href="{{ route('home')}}">
                                         Job Portal
                                     </a>
                                 </div>
@@ -44,10 +44,11 @@
                                         <div>
                                             <ul class="navbar-nav ml-auto ml-md-0">
                                                 <li class="nav-item dropdown">
-                                                    <a class="nav-link dropdown-toggle text-light text-uppercase" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Username</a>
+                                                    <a class="nav-link dropdown-toggle text-light text-uppercase" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Username</a>
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                                                        <a class="dropdown-item" href="/post_job">Post Job</a>
-                                                        <a class="dropdown-item" href="#">View profile</a>
+                                                        <a class="dropdown-item" href="/editProfile/{userId}">View profile</a>
+                                                        <a class="dropdown-item" href="{{route('job_applied_page')}}">Applied Job</a>
                                                         <div class="dropdown-divider"></div>
                                                         <a class="dropdown-item" href="login.html">Logout</a>
                                                     </div>
