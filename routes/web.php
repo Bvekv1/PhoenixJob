@@ -45,10 +45,15 @@ Route::post('/job_edit','JobController@job_edit')->name('job_edit');
 Route::get('/editProfile/{userId}','ProfileController@edit_profile_page')->name('edit_profile_page');
 Route::post('/editProfile','ProfileController@edit_profile')->name('edit_profile');
 
+//for job delete
+Route::get('/deleteJob/{jobId}', 'JobController@delete_job')->name('delete_job');
+
 //for admin dashboard
 Route::get('/admin_dashboard', 'AdminController@admin_dashboard_page')->name('admin_dashboard_page');
 
 //for applied job
 Route::get('/applied_job', 'AppliedJobController@job_applied_page')->name('job_applied_page');
+
+Route::post('/jobApplied', 'AppliedJobController@job_applied')->name('job_applied');
 
 

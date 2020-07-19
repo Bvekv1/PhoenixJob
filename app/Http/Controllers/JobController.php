@@ -198,5 +198,30 @@ class JobController extends Controller
         }
     }
 
+    public function delete_job(request $request, $jobId){
+        
+        $userToken = session()->get('usertoken');
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer '.$userToken
+        ])->delete('http://localhost:4000/api/v1/job/'. $jobId);
+        $data = json_decode($response->body());
+        
+        // dd($data);
+        if ($data->status == 200 && $data->message === 'Job was successfully deleted'){
+            return back()->withErrors(['message' => $data->message]);
+        }
+        else {
+            return back()->withErrors(['error' => 'job was not deleted']);
+        }
+    }
 
-}
+
+
+    }
+
+
+
+
+
+
+

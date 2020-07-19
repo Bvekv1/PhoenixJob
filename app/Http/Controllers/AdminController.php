@@ -12,7 +12,7 @@ class AdminController extends Controller
         $response = Http::get('http://localhost:4000/api/v1/job');
 
         $jobs = json_decode($response->body());
-//        dd($jobs);
+    //    dd($jobs);
         return view('admin_dashboard',['jobList'=>$jobs]);
     }
 }
