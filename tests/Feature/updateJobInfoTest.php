@@ -5,19 +5,13 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class postJobTest extends TestCase
+class updateJobInfoTest extends TestCase
 {
     /** @test */
-
-    public function postJobTest()
+    public function editJob()
     {
-        // $response = $this->post('/login', ['email' => 'kappa@gmail.com'
-        //                                                         ,'password' => 'kappa123']);
-        // $user = json_decode($response);
-        
         $login = Http::post('http://localhost:4000/api/v1/users/login', [
             'email' => 'kappa@gmail.com',
             'password' => 'kappa123'
@@ -32,12 +26,12 @@ class postJobTest extends TestCase
         // die();
 
         $response = Http::withHeaders(['Authorization' => 'Bearer '.$token])->
-                                post('http://localhost:4000/api/v1/job',
+                                put('http://localhost:4000/api/v1/job/1',
                                             ['jobTitle' => 'Software Engineer',
                                             'experience' => '2 years',
-                                            'level' => 'Bachelor',
-                                            'positions' => 'Manager',
-                                            'jobType' => 'Part Time',
+                                            'level' => 'Master',
+                                            'positions' => 'nManager',
+                                            'jobType' => 'Full Time',
                                             'salary' => '2000',
                                             'education' => 'Bachelor',
                                             'location' => 'Kathmandu',
@@ -47,11 +41,8 @@ class postJobTest extends TestCase
                                             'jobHours' => '3 hours',
                                             'benefits' => 'Easy',
                                             'expected' => 'Fun'
-                                ]);       
-        // $response->headers->set('Authorization','Bearer '.$responseData->token);
-
+                                ]); 
         $this->assertEquals(200, $response->status());
-        // $this->assertInstanceOf('Illuminate\Testing\TestResponse', $response);
-        // $this->assertEquals('http://localhost', $response->getTargetUrl());
     }
+
 }
