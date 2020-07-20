@@ -18,7 +18,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "phpspec/phpspec": "^6.2",
-        "symfony/config": "^5.1"
+        "symfony/config": "^5.1",
+        "tymon/jwt-auth": "dev-develop"
     },
     "require-dev": {
         "behat/behat": "^3.7",
