@@ -87,7 +87,7 @@
                                                             <p> <i class="fa fa-map-marker"></i> {{$results->Location}}</p>
                                                         </div>
                                                         <div class="location">
-                                                            <p> <i class="fa fa-clock-o"></i> {{$results->jobHours}}</p>
+                                                            <p> <i class="fa fa-clock-o"></i> {{$results->jobHours}} Hours</p>
                                                         </div>
                                                     </div>
                                                 </div>
