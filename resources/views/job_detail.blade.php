@@ -31,7 +31,7 @@
                                             <p> <i class="fa fa-map-marker"></i> {{$jobdetail->Location}}</p>
                                         </div>
                                         <div class="location">
-                                            <p> <i class="fa fa-clock-o"></i> {{$jobdetail->jobType}}</p>
+                                            <p> <i class="fa fa-clock-o"></i> {{$jobdetail->jobHours}} Hours</p>
                                         </div>
                                     </div>
                                 </div>
@@ -60,10 +60,12 @@
                             <p>{{$jobdetail->benefits}}</p>
                         </div>
                     </div>
+                    @if(session()->has('usertoken'))
                     <div class="apply_job_form white-bg">
+                    
                         <h4>Apply for the job</h4>
                         <form action="{{route('job_applied')}}" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }} 
+                             {{ csrf_field() }} 
                             <div class="row">
                             <div class="col-md-12" >
                             <input type="text" name="jobId" value="{{$jobdetail->jobId}}" hidden readonly />
@@ -107,9 +109,12 @@
                                 </div>
                             </div>
                         </form>
+                        
                     </div>
+                    @endif
                 </div>
-                <div class="col-lg-4">
+                
+                <div class="col-lg-8">
                     <div class="job_sumary">
                         <div class="summery_header">
                             <h3>Job Summery</h3>
@@ -137,9 +142,9 @@
                             <li><a href="#"> <i class="fa fa-envelope"></i></a> </li>
                         </ul>
                     </div>
-                    @endforeach
-                    @endif
                 </div>
+                @endforeach
+                    @endif
             </div>
         </div>
     </div>

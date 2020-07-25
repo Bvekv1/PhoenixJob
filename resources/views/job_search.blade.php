@@ -38,15 +38,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12">
-                                        <div class="single_field">
-                                            <select class="wide">
-                                                <option data-display="Job Title">Job Title</option>
-                                                <option value="1">Job title 1</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </form>
                         </div>
@@ -87,7 +78,7 @@
                                                             <p> <i class="fa fa-map-marker"></i> {{$results->Location}}</p>
                                                         </div>
                                                         <div class="location">
-                                                            <p> <i class="fa fa-clock-o"></i> {{$results->jobHours}}</p>
+                                                            <p> <i class="fa fa-clock-o"></i> {{$results->jobHours}} Hours</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -126,8 +117,5 @@
         </div>
     </div>
     <!-- job_listing_area_end  -->
-
-
-
 
 @endsection
