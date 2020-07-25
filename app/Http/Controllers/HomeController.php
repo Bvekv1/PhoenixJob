@@ -14,7 +14,6 @@ class HomeController extends Controller
 //        dd($jobs);
         return view('home',['jobList'=>$jobs]);
         
-        return view('admin_dashboard',['jobList'=>$jobs]);
     }
 
 }
