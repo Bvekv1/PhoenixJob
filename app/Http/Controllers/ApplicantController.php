@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class ApplicantController extends Controller
 {
@@ -18,7 +19,8 @@ class ApplicantController extends Controller
         ])->get('http://localhost:4000/api/v1/hire/'. $jobId);
         $data = json_decode($response->body());
 
-//         dd($data);
+
+        // dd($data);
 if ($data !== []){
     return view('job_applicants',['getjobapplicant'=>$data]);
 } else {

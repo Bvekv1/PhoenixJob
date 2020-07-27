@@ -66,6 +66,6 @@ Route::get('/deleteappliedJob/{jobId}', 'AppliedJobController@delete_applied_job
 //for job applicants
 Route::get('/job_applicants/{jobId}', 'ApplicantController@view_job_applicants')->name('view_job_applicants');
 
-Route::get('/job_applicants/{jobId}', 'ApplicantController@job_applicant')->name('job_applicant');
+Route::get('/job_applicants/{jobId}', 'ApplicantController@get_applicant')->name('job_applicants');
 
 

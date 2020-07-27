@@ -15,8 +15,8 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                             <tr>
-                                <th>Applicants Name</th>
-                                <th>Address</th>
+                                <th>Applicants Name </th>
+                                <th>Address </th>
                                 <th>Contact Number</th>
                                 <th>Resume</th>
                                 <th>Action</th>
@@ -24,9 +24,9 @@
                             </thead>
                             <tbody>
                                 <tr class="bg-light">
-                                    <td>name of job seeker from database</td>
-                                    <td>address from database</td>
-                                    <td>contact number </td>
+                                    <td>{{$getappliedapplicants->user->firstName}}</td>
+                                    <td>{{$getappliedapplicants->user->address}}</td>
+                                    <td>{{$getappliedapplicants->user->phone}}</td>
                                     <td><a href="#" class="btn btn-xs btn-outline-primary">View Resume</a></td>
                                     <td>
                                         <a href="#" class="btn btn-xs btn-outline-primary">Hire</a>
