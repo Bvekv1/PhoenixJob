@@ -1,6 +1,8 @@
 @extends('layout.admin_layout')
 @section('content')
     <div class="col p-4">
+    @if(isset($getjobapplicant))
+                        @foreach($getjobapplicant as $getappliedapplicants)
         <div class="container">
             <div class="card mb-3">
                 <div class="card-header text-right">
@@ -37,6 +39,8 @@
                 </div>
             </div>
         </div>
+        @endforeach
+                    @endif
     </div>
 
 @endsection
