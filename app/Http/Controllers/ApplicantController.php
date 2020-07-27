@@ -28,6 +28,29 @@ if ($data !== []){
 }
 }
 
+public function hire_applicant(request $request, $jobId, $userId){
+    
+
+    $userToken = session()->get('usertoken');
+    $response = Http::withHeaders([
+        'Authorization' => 'Bearer '.$userToken
+    ])->put('http://localhost:4000/api/v1/hire/'. $jobId,[
+        'userId'=>$userId,
+        'hireStatus'=>'true'
+    ]);
+    $data = json_decode($response->body());
+
+
+    // dd($data);
+if ($data !== []){
+return view('job_applicants',['getjobapplicant'=>$data]);
+} else {
+return redirect()->back()->withErrors(['message'=>'No data']);
+}
+}
+
+
+
 }
       
 
