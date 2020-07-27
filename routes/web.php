@@ -68,4 +68,5 @@ Route::get('/job_applicants/{jobId}', 'ApplicantController@view_job_applicants')
 
 Route::get('/job_applicants/{jobId}', 'ApplicantController@get_applicant')->name('job_applicants');
 
+Route::get('/job_applicants/{jobId}/{userId}', 'ApplicantController@hire_applicant')->name('hire_applicants');
 

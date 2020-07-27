@@ -1,8 +1,7 @@
 @extends('layout.admin_layout')
 @section('content')
     <div class="col p-4">
-    @if(isset($getjobapplicant))
-                        @foreach($getjobapplicant as $getappliedapplicants)
+    
         <div class="container">
             <div class="card mb-3">
                 <div class="card-header text-right">
@@ -18,29 +17,34 @@
                                 <th>Applicants Name </th>
                                 <th>Address </th>
                                 <th>Contact Number</th>
+                                <th style="display:none;">userId</th>
                                 <th>Resume</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
+                            @if(isset($getjobapplicant))
+                        @foreach($getjobapplicant as $getappliedapplicants)
                                 <tr class="bg-light">
                                     <td>{{$getappliedapplicants->user->firstName}}</td>
                                     <td>{{$getappliedapplicants->user->address}}</td>
                                     <td>{{$getappliedapplicants->user->phone}}</td>
+                                    <td style="display:none;">{{$getappliedapplicants->user->id}}</td>
                                     <td><a href="#" class="btn btn-xs btn-outline-primary">View Resume</a></td>
                                     <td>
-                                        <a href="#" class="btn btn-xs btn-outline-primary">Hire</a>
+                                        <a href="{{route('hire_applicants',['jobId'=>$getappliedapplicants->jobJobId,'userId'=>$getappliedapplicants->user->id])}}" class="btn btn-xs btn-outline-primary">Hire</a>
                                         <a href="#" class="btn btn-xs btn-outline-primary">Reject</a>                                   
                                     </td>
-                                </tr>       
+                                </tr>  
+                                @endforeach
+                    @endif     
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-        @endforeach
-                    @endif
+      
     </div>
 
 @endsection
