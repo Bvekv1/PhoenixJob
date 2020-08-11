@@ -14,7 +14,7 @@ class RegistrationTest extends TestCase
    /** @test */
     public function register()
     {
-        $response = $this->call('POST', 'register', ['email' => 'zexcu008@gmail.com',
+        $response = $this->call('POST', 'register', ['email' => 'ssssdfa@gmail.com',
                                                         'firstName' => 'Sujan',
                                                         'lastName' => 'Maharjan',
                                                         'password' => 'kappa123',

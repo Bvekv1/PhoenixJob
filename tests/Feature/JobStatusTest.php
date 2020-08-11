@@ -7,13 +7,18 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Http;
 
-class applyJobTest extends TestCase
+
+class JobStatusTest extends TestCase
 {
-    /** @test */
-    public function applyJobTest()
+    /**
+     * A basic feature test example.
+     *
+     * @return void
+     */
+    public function JobStatusTest()
     {
         $login = Http::post('http://localhost:4000/api/v1/users/login', [
-            'email' => 'asdf@gmail.com',
+            'email' => 'suwal@gmail.com',
             'password' => 'asdf'
         ]);
 
@@ -22,13 +27,11 @@ class applyJobTest extends TestCase
         // die();
         $token = $responseData->token;
 
-        $response = Http::WithHeaders(['Authorization' => 'Bearer '.$token])
-                    ->post('localhost:4000/api/v1/jobApplied',
-                            [
-                                'jobId'=>'1'
-                            ]
-                );
+        // var_dump($responseData);
+        // die();
 
+        $response = Http::withHeaders(['Authorization' => 'Bearer '.$token])->
+                                get('http://localhost:4000/api/v1/jobStatus/:jobId'); 
         $this->assertEquals(200, $response->status());
     }
 }

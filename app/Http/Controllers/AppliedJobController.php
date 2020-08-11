@@ -40,7 +40,7 @@ class AppliedJobController extends Controller
             'Authorization' => 'Bearer '.$userToken
         ])->get('http://localhost:4000/api/v1/jobApplied');
         $data = json_decode($response->body());
-    //    dd($data);
+       dd($data);
     //    foreach ($data as $datas){
     //        dd($datas->job->jobTitle);
     //    }
