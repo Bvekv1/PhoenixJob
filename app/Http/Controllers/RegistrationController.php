@@ -36,7 +36,7 @@ class RegistrationController extends Controller
         $firstName = $request->input('firstName');
         $lastName = $request->input('lastName');
         $password = $request->input('password');
-        $userType = $request->input('userType');;
+        $userType = $request->input('userType');
         $companyName = $request->input('companyName');
         $organizationType = $request->input('organizationType');
         $address = $request->input('address');
@@ -52,7 +52,7 @@ class RegistrationController extends Controller
             'lastName' => $lastName,
             'email' => $email,
             'password' => $password,
-            'userType' => $userType,    
+            'userType' => $userType,
             'companyName' => $companyName,
             'organizationType' => $organizationType,
             'address' => $address,

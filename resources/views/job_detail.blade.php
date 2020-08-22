@@ -62,10 +62,10 @@
                     </div>
                     @if(session()->has('usertoken'))
                     <div class="apply_job_form white-bg">
-                    
+
                         <h4>Apply for the job</h4>
                         <form action="{{route('job_applied')}}" method="post" enctype="multipart/form-data">
-                             {{ csrf_field() }} 
+                             {{ csrf_field() }}
                             <div class="row">
                             <div class="col-md-12" >
                             <input type="text" name="jobId" value="{{$jobdetail->jobId}}" hidden readonly />
@@ -92,7 +92,7 @@
                                           </button>
                                         </div>
                                         <div class="custom-file">
-                                          <input type="file" name="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
+                                          <input type="file" name="resumeFile" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" required>
                                           <label class="custom-file-label" for="inputGroupFile03">Upload CV</label>
                                         </div>
                                       </div>
@@ -109,11 +109,11 @@
                                 </div>
                             </div>
                         </form>
-                        
+
                     </div>
                     @endif
                 </div>
-                
+
                 <div class="col-lg-8">
                     <div class="job_sumary">
                         <div class="summery_header">
