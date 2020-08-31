@@ -15,21 +15,8 @@
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="{{route('home')}}">home</a></li>
-                                            <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="candidate.html">Candidates </a></li>
-                                                    <li><a href="job_details.html">job details </a></li>
-                                                    <li><a href="elements.html">elements</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">blog</a></li>
-                                                    <li><a href="single-blog.html">single-blog</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="{{route('home')}}">home</a></li>                                    
+                                            <li><a href="#">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -50,7 +37,7 @@
                                                         <a class="dropdown-item" href="/editProfile/{userId}">View profile</a>
                                                         <a class="dropdown-item" href="{{route('get_applied_job')}}">Applied Job</a>
                                                         <div class="dropdown-divider"></div>
-                                                        <a class="dropdown-item" href="login.html">Logout</a>
+                                                        <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
                                                     </div>
                                                 </li>
                                             </ul>

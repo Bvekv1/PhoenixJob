@@ -1,5 +1,10 @@
 @extends('layout.admin_layout')
 @section('content')
+@error('message')
+            <script>
+                alert('applicant was hired');
+            </script>
+@enderror
     <div class="col p-4">
 
         <div class="container">
@@ -32,8 +37,8 @@
                                     <td style="display:none;">{{$getappliedapplicants->user->id}}</td>
                                     <td><a href="{{asset('upload')}}/{{$getappliedapplicants->resume}}" target="_blank" class="btn btn-xs btn-outline-primary">View Resume</a></td>
                                     <td>
-                                        <a href="{{route('hire_applicants',['jobId'=>$getappliedapplicants->jobJobId,'userId'=>$getappliedapplicants->user->id])}}" class="btn btn-xs btn-outline-primary">Hire</a>
-                                        <a href="#" class="btn btn-xs btn-outline-primary">Reject</a>
+                                        <a href="/job_applicants/{{$getappliedapplicants->jobJobId}}/{{$getappliedapplicants->user->id}}" class="btn btn-xs btn-outline-primary">Hire</a>
+                                        <a href="/job_applicants_rejected/{{$getappliedapplicants->jobJobId}}/{{$getappliedapplicants->user->id}}" class="btn btn-xs btn-outline-primary">Reject</a>
                                     </td>
                                 </tr>
                                 @endforeach

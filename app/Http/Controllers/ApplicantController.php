@@ -7,12 +7,8 @@ use Illuminate\Support\Facades\Http;
 
 class ApplicantController extends Controller
 {
-    public function view_job_applicants($jobId){
-        return view('job_applicants');
-    }
 
     public function get_applicant(request $request, $jobId){
-
         $userToken = session()->get('usertoken');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer '.$userToken
@@ -29,28 +25,43 @@ if ($data !== []){
 }
 
 public function hire_applicant(request $request, $jobId, $userId){
-    
-
+    // dd($jobId,$userId);
     $userToken = session()->get('usertoken');
     $response = Http::withHeaders([
         'Authorization' => 'Bearer '.$userToken
     ])->put('http://localhost:4000/api/v1/hire/'. $jobId,[
         'userId'=>$userId,
-        'hireStatus'=>'true'
+        'hireStatus'=> 1
     ]);
     $data = json_decode($response->body());
-
-
     // dd($data);
 if ($data !== []){
-return view('job_applicants',['getjobapplicant'=>$data]);
+return redirect()->back()->withErrors(['message'=>'applicant was hired']);
 } else {
-return redirect()->back()->withErrors(['message'=>'No data']);
+return redirect()->back()->withErrors(['error'=>'error occur']);
 }
 }
+
+    public function reject_applicant(request $request, $jobId, $userId){
+        // dd($jobId,$userId);
+        $userToken = session()->get('usertoken');
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer '.$userToken
+        ])->put('http://localhost:4000/api/v1/reject/'. $jobId,[
+            'userId'=>$userId,
+            'hireStatus'=> 2
+        ]);
+        $data = json_decode($response->body());
+        // dd($data);
+        if ($data !== []){
+            return redirect()->back()->withErrors(['message'=>'applicant was rejected']);
+        } else {
+            return redirect()->back()->withErrors(['error'=>'error occur']);
+        }
+    }
 
 
 
 }
-      
+
 

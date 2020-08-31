@@ -1,15 +1,20 @@
 @extends('layout.mainlayout')
 @section('content')
-
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                        <div class="col-xl-12">
+                            <div class="bradcam_text">
+                                <h3>Applied Jobs List</h3>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+    <!--/ breadcrumb_area  -->
     <div class="job_listing_area">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="section_title">
-                        <h3>Applide Job Listing</h3>
-                    </div>
-                </div>
-            </div>
             <div class="job_lists">
                 <div class="row">
                     @if(isset($getjobapplied))
@@ -28,6 +33,9 @@
                                                 </div>
                                                 <div class="location">
                                                     <p> <i class="fa fa-clock-o"></i> {{$getappliedjobs->job->jobHours}}</p>
+                                                </div>
+                                                <div class="location">
+                                                    <p class="alert-danger text-danger"> {{$getappliedjobs->notificationMessage}}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -49,6 +57,5 @@
             </div>
         </div>
     </div>
-
 
 @endsection

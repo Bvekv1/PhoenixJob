@@ -13,10 +13,12 @@ class ProfileController extends Controller
             $userToken = session()->get('usertoken');
             $userCheck = Http::withHeaders([
                 'Authorization' => 'Bearer '.$userToken
-            ])->get('http://localhost:4000/usercheck');
+            ])->get('http://localhost:4000/api/v1/users');
             $userDetail = json_decode($userCheck->body());
-            dd($userDetail);
-            $response =  Http::get('http://localhost:4000/api/v1/users/'. $userDetail->id);
+            // dd($userDetail);
+            $response =  Http::withHeaders([
+                'Authorization' => 'Bearer '.$userToken
+            ])->get('http://localhost:4000/api/v1/users/'. $userDetail->userId);
             $data = json_decode($response->body());
             // dd($data);
             return view('edit_profile', ['detail'=>$data]);

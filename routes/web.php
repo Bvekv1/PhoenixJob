@@ -23,13 +23,13 @@ Route::post('/login', 'LoginController@login')->name('login');
 Route::get('/register', 'RegistrationController@register_page')->name('registration_page');
 Route::post('/register', 'RegistrationController@register')->name('register');
 
+//for logout *************************************************************************
+Route::get('/logout', 'LoginController@logout')->name('logout');
+
 //for job post ***********************************************************************
 Route::get('/post_job', 'JobController@job_post_form')->name('job_post_form');
 Route::post('/post_job', 'JobController@job_post')->name('job_post');
 
-Route::get('/admin_dashboard', function () {
-    return view('admin_dashboard');
-});
 
 //for job search result ***************************************************************
 Route::post('/job_search','JobController@search_result')->name('search_job');
@@ -64,9 +64,7 @@ Route::get('/getappliedJob', 'AppliedJobController@get_applied_job')->name('get_
 Route::get('/deleteappliedJob/{jobId}', 'AppliedJobController@delete_applied_job')->name('delete_applied_job');
 
 //for job applicants
-Route::get('/job_applicants/{jobId}', 'ApplicantController@view_job_applicants')->name('view_job_applicants');
-
 Route::get('/job_applicants/{jobId}', 'ApplicantController@get_applicant')->name('job_applicants');
 
 Route::get('/job_applicants/{jobId}/{userId}', 'ApplicantController@hire_applicant')->name('hire_applicants');
-
+Route::get('/job_applicants_rejected/{jobId}/{userId}', 'ApplicantController@reject_applicant')->name('reject_applicant');
