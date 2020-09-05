@@ -23,28 +23,22 @@ class RegistrationController extends Controller
             'lastName' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'companyName' => 'required',
-            'organizationType' => 'required',
             'address' => 'required',
             'country' => 'required',
             'city' => 'required',
             'phone' => 'required',
-            'website' => 'required',
-            'description' => 'required'
         ]);
         $email = $request->input('email');
         $firstName = $request->input('firstName');
         $lastName = $request->input('lastName');
         $password = $request->input('password');
-        $userType = $request->input('userType');;
+        $userType = $request->input('userType');
         $companyName = $request->input('companyName');
-        $organizationType = $request->input('organizationType');
         $address = $request->input('address');
         $country = $request->input('country');
         $city = $request->input('city');
         $phone = $request->input('phone');
         $website = $request->input('website');
-        $description = $request->input('description');
 //        dd($country,$userType,$city,$organizationType,$email);
 
         $response = Http::post('http://localhost:4000/api/v1/users', [
@@ -52,15 +46,15 @@ class RegistrationController extends Controller
             'lastName' => $lastName,
             'email' => $email,
             'password' => $password,
-            'userType' => $userType,    
+            'userType' => $userType,
             'companyName' => $companyName,
-            'organizationType' => $organizationType,
+            'organizationType' => '',
             'address' => $address,
             'country' => $country,
             'city' => $city,
             'phone' => $phone,
             'website' => $website,
-            'companyDescription' => $description,
+            'companyDescription' => '',
         ]);
 //        dd($response->body());
         $data = json_decode($response->body());

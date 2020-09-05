@@ -34,16 +34,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="text" name="companyName" class="form-control" placeholder="Enter Company Name" required>
-                </div>
-                <div class="form-group ">
-                    <label for="exampleFormControlSelect1">Enter Organization Type</label>
-                    <select name="organizationType" class="form-control mb-3" id="exampleFormControlSelect1">
-                        <option value="Private">Private</option>
-                        <option value="Public">Public</option>
-                        <option value="Government">Government</option>
-                        <option value="NGO">NGO</option>
-                    </select>
+                    <input type="text" name="companyName" class="form-control" placeholder="Enter Company Name" hidden>
                 </div>
                 <div class="form-group">
                     <input type="text" name="address" class="form-control" placeholder="Enter Your Address" required>
@@ -69,13 +60,7 @@
                     <input type="text" name="phone" class="form-control" placeholder="Enter Phone number" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="website" class="form-control" placeholder="Enter Website" required>
-                </div>
-                <div class="form-group">
-                    <label>Enter company description</label>
-                    <textarea name="description" type="text" class="form-control"
-                    style="width:400px; height:100px;" required>
-                    </textarea>
+                    <input type="text" name="website" class="form-control" placeholder="Enter Website" hidden>
                 </div>
                     <button type="submit" class="btn btn-success btn-block">Signup</button>
             </form>

@@ -17,12 +17,22 @@ class AppliedJobController extends Controller
     }
 
     public function job_applied(request $request){
+        $this->validate($request, [
+            'resumeFile' => 'required'
+        ]);
         $jobId=$request->input('jobId');
-        // dd($jobId);
+        $filename = $request->file('resumeFile')->getClientOriginalName();
+        $file = "upload " . time() . "_" . date('y') . "_" . $filename; //renaming the file name
+        $request->file('resumeFile')->move('upload', $file);
+
+//         dd($fileResponse->body());
         $userToken = session()->get('usertoken');
         $response = Http::withHeaders([
             'Authorization' => 'Bearer '.$userToken
-        ])->post('http://localhost:4000/api/v1/jobApplied/', ['jobId'=>$jobId]);
+        ])->post('http://localhost:4000/api/v1/jobApplied/', [
+            'jobId'=>$jobId,
+            'filename' => $file
+            ]);
         $data = json_decode($response->body());
 //        dd($data);
 
@@ -40,7 +50,7 @@ class AppliedJobController extends Controller
             'Authorization' => 'Bearer '.$userToken
         ])->get('http://localhost:4000/api/v1/jobApplied');
         $data = json_decode($response->body());
-       dd($data);
+//       dd($data);
     //    foreach ($data as $datas){
     //        dd($datas->job->jobTitle);
     //    }
