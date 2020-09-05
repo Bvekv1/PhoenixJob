@@ -24,7 +24,7 @@
                                         <td>{{$jobsList->jobTitle}}</td>
                                         <td>
                                             <a href="/job_applicants/{{$jobsList->jobId}}" class="btn btn-xs btn-outline-primary">View Applicants</a>
-                                            <a href="#" class="btn btn-xs btn-default"><span class="fa fa-pencil"></span></a>
+                                            <a href="/job_edit/{{$jobsList->jobId}}" class="btn btn-xs bt-default"><span class="fa fa-pencil"></span></a>
                                             <a href="/deleteJob/{{$jobsList->jobId}}" class="btn btn-xs btn-default"><span class="fa fa-trash"></span></a>
                                         </td>
 
