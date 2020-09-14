@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use http\Cookie;
+use Illuminate\Filesystem\Cache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -37,10 +39,10 @@ class AppliedJobController extends Controller
 //        dd($data);
 
         if ($data->status == 200 && $data->message === 'Job was applied successfully'){
-            return back()->withErrors(['message' => $data->message]);
+            return redirect()->back()->withErrors(['message' => $data->message]);
         }
         else {
-            return back()->withErrors(['error' => 'job was not applied']);
+            return redirect()->back()->withErrors(['error' => 'job was not applied']);
         }
     }
 
@@ -50,14 +52,14 @@ class AppliedJobController extends Controller
             'Authorization' => 'Bearer '.$userToken
         ])->get('http://localhost:4000/api/v1/jobApplied');
         $data = json_decode($response->body());
-//       dd($data);
+    //   dd($data);
     //    foreach ($data as $datas){
     //        dd($datas->job->jobTitle);
     //    }
         if ($data !== []){
             return view('job_applied',['getjobapplied'=>$data]);
         } else {
-            return redirect()->back()->withErrors(['message'=>'No data']);
+            return view('job_applied');
         }
     }
 
@@ -71,10 +73,10 @@ class AppliedJobController extends Controller
 
 //         dd($data);
         if ($data->status == 200 && $data->message === 'Job applied was successfully deleted'){
-            return back()->withErrors(['message' => $data->message]);
+            return redirect()->back()->withErrors(['deleteMessage' => $data->message]);
         }
         else {
-            return back()->withErrors(['error' => 'job applied was not deleted']);
+            return redirect()->back()->withErrors(['error' => 'job applied was not deleted']);
         }
     }
 

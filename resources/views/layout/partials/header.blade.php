@@ -15,7 +15,7 @@
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a href="{{route('home')}}">home</a></li>                                    
+                                            <li><a href="{{route('home')}}">home</a></li>
                                             <li><a href="#">Contact</a></li>
                                         </ul>
                                     </nav>
@@ -32,7 +32,7 @@
                                             <ul class="navbar-nav ml-auto ml-md-0">
                                                 <li class="nav-item dropdown">
                                                     <a class="nav-link dropdown-toggle text-light text-uppercase" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Username</a>
+                                                    Account</a>
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                                                         <a class="dropdown-item" href="/editProfile/{userId}">View profile</a>
                                                         <a class="dropdown-item" href="{{route('get_applied_job')}}">Applied Job</a>

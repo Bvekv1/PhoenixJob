@@ -1,5 +1,10 @@
 @extends('layout.admin_layout')
 @section('content')
+    @error('message')
+    <script>
+        alert('Job was successfully deleted');
+    </script>
+    @enderror
     <div class="col p-4">
         <div class="container">
             <div class="card mb-3">

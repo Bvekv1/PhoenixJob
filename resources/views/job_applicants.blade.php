@@ -1,12 +1,17 @@
 @extends('layout.admin_layout')
 @section('content')
 @error('message')
-            <script>
-                alert('applicant was hired');
-            </script>
+<script>
+    alert('The applicants was hired successfully');
+</script>
 @enderror
-    <div class="col p-4">
+@error('rejectMessage')
+<script>
+    alert('The applicants was rejected successfully');
+</script>
+@enderror
 
+    <div class="col p-4">
         <div class="container">
             <div class="card mb-3">
                 <div class="card-header text-right">
@@ -42,6 +47,8 @@
                                     </td>
                                 </tr>
                                 @endforeach
+                            @else
+                                <tr class="bg-light"><h3>There is no job applicants yet.</h3></tr>
                     @endif
                             </tbody>
                         </table>

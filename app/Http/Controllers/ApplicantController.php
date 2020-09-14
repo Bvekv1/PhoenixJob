@@ -20,7 +20,7 @@ class ApplicantController extends Controller
 if ($data !== []){
     return view('job_applicants',['getjobapplicant'=>$data]);
 } else {
-    return redirect()->back()->withErrors(['message'=>'No data']);
+    return view('job_applicants');
 }
 }
 
@@ -54,7 +54,7 @@ return redirect()->back()->withErrors(['error'=>'error occur']);
         $data = json_decode($response->body());
         // dd($data);
         if ($data !== []){
-            return redirect()->back()->withErrors(['message'=>'applicant was rejected']);
+            return redirect()->back()->withErrors(['rejectMessage'=>'applicant was rejected']);
         } else {
             return redirect()->back()->withErrors(['error'=>'error occur']);
         }

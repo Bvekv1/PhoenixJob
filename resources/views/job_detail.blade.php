@@ -1,6 +1,10 @@
 @extends('layout.mainlayout')
 @section('content')
-
+    @error('message')
+    <script>
+        alert('job applied successful');
+    </script>
+    @enderror
 <!-- bradcam_area  -->
 <div class="bradcam_area bradcam_bg_1">
         <div class="container">
@@ -81,11 +85,6 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="input_field">
-                                        <input type="text" name="website" placeholder="Website/Portfolio link">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                           <button type="button" id="inputGroupFileAddon03"><i class="fa fa-cloud-upload" aria-hidden="true"></i>
@@ -96,11 +95,6 @@
                                           <label class="custom-file-label" for="inputGroupFile03">Upload CV</label>
                                         </div>
                                       </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="input_field">
-                                        <textarea name="#" id="" cols="30" rows="10" placeholder="Coverletter"></textarea>
-                                    </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="submit_btn">

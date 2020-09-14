@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="jobs_right">
                                         <div class="apply_now">
-                                            <a class="boxed-btn4" href="#"> View </a>
+                                            <a class="boxed-btn4" href="/job_detail/{{$getappliedjobs->job->jobId}}"> View </a>
                                             <a href="/deleteappliedJob/{{$getappliedjobs->job->jobId}}" class="boxed-btn3">Delete</a>
                                         </div>
                                         <div class="date">
@@ -52,6 +52,8 @@
                                 </div>
                             </div>
                         @endforeach
+                        @else
+                        <div><h2>you haven't appiled job yet.</h2></div>
                     @endif
                 </div>
             </div>
